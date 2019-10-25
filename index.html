@@ -25,8 +25,52 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h4>Symfony Forms in Detail</h4>
+					<ul>
+						<li>Controller creation</li>
+						<li>Form creation</li>
+						<li>empty_data if no setData is called (data array is passed)</li>
+						<li>data_class zum setzen des DTO</li>
+						<li>property_path - wenn die property im dto anders heißt als im formular</li>
+					</ul>
+					<a href="#">Demo</a>
+				</section>
+				<section>
+					<h4>CQRS Event Sourcing -> Meine Notes (1/3)</h4>
+					<ul>
+						<li>Prozess für Request Verarbeitung durch Varnish beschleunigen</li>
+						<li>CommandBus einführen für Aktionen wie neuer User</li>
+						<li>Regeln auf Commands erstellen und das ist die API</li>
+						<li>Commands führen unterschiedliche Layer aus (PSR15 Middlewares)</li>
+						<li>Commands sollten eine uuid haben die dann gelöscht werden kann im Fehlerfall</li>
+					</ul>
+				</section>
+				<section>
+					<h4>CQRS Event Sourcing -> Meine Notes (2/3)</h4>
+					<ul>
+						<li>man braucht keine AuditLogs mehr (Mal prüfen für postgres)</li>
+						<li>die über Event Sourcing gesammelten Daten (immutable - unveränderbar) können ausgewertet werden um zu sehen warum z.b. ein user den Warenkorb bei 500€ abbricht</li>
+						<li>Ein Event ist immer eine State Mutation (Domain Events wären z.B. new RegisteredUser) werden im EventStore (DB) gespeichert (Nur Inserts)</li>
+						<li>Um zu sehen was der letzte State ist zu einem User, alle Events loopen via foreach (Functional programming called Fold)</li>
+						<li>Diese Events zum User werden nach Regeln verarbeitet um den aktuellen Status zu einem User zu ermitteln (z.B. mit Array Reduce)</li>
+						<li>Der Fold wird gespeichert um sich zu merken welche Events schon verarbeitet wurden um den Status zu ermitteln und dann nächstes mal erneut beim Fold zu starten. Also immer nur von jetzt zu weiter</li>
+						<li>Extract Load Tasks</li>
+						<li>Mit dem ermittelten State (über den Fold) wird Production befüllt um den aktuellen User State zu übermitteln (die relationale DB wird so gesehen als Cache benutzt). (Source of Truth in der Event Store DB)</li>
+					</ul>
+				</section>
+				<section>
+					<h4>CQRS Event Sourcing -> Meine Notes (3/3)</h4>
+					<ul>
+						<li>Event Streams -> z.b. wenn X,Y,Z ready sind starte -> Prozess</li>
+						<li>Die DB kann über den FOld Prozess (der den Event Store benutzt) wieder aufgebaut werden, kann vllt auch einen Tag dauern</li>
+						<li>Event Streams müssen nicht nur durch eine Queue abgebildet werden</li>
+						<li>ProzessManager weiß an welcher Position die Events das letztemal verabarbeitet wurden</li>
+						<li>ProzessManager hat busines logic und trifft eine Entscheidung die wieder in den Event Store zurück geht</li>
+						<li>Am besten eine Sequence benutzen damit mehrere ProzessManager gleichzeitig den Store abarbeiten können</li>
+					</ul>
+					<a href="#">Demo (index.php)</a>
+				</section>
 				<div class="nxs--logo"><img src="assets/nexus-united.png" alt="nexus united"/></div>
 			</div>
 		</div>

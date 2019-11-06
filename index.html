@@ -210,7 +210,50 @@ class SmokeTest extends HttpSmokeTestCase
     }
                     </code></pre>
                 </section>
-
+                <section>
+                    <h4>Symfony Forms in Detail (WS 1)</h4>
+                    <ul>
+                        <li>Controller / Form creation (Symfony Docs)</li>
+                        <li>empty_data (callback with data array for mapping)</li>
+                        <li>data_class (Model Zuweisung)</li>
+                        <li>property_path (bei anders benannter property im dto zum FormField)</li>
+                    </ul>
+                    <p><a href="#">Demo</a>
+                        https://github.com/chr-hertel/product-crud</p>
+                </section>
+                <section>
+                    <h4>CQRS Event Sourcing (WS 2)</h4>
+                    <ul>
+                        <li>CommandBus (für Aktionen)</li>
+                        <li>Commands (dienen als API)</li>
+                        <li>Ausgeführte Commands haben eine Eindeutigkeit (z.B. uuid)</li>
+                        <li>Keine AuditLogs der DB mehr notwendig</li>
+                        <li>Die gesammelten Daten sind unveränderbar</li>
+                        <li>Auswertung der Daten möglich (z.B. Warenkorb Absprünge bei 500€)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>CQRS Event Sourcing (WS 2)</h4>
+                    <ul>
+                        <li>Ein Ausgelöster Command (Event) ist eine State Mutation</li>
+                        <li>Letzter State wird über looping ermittelt</li>
+                        <li>State Index wird in die Datenbank geschrieben (aufgebaut vom Fold)</li>
+                        <li>State Index kann über Fold Prozess aufgebaut werden</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>CQRS Event Sourcing (WS 2)</h4>
+                    <ul>
+                        <li>Event Store DB ist die Source of Truth</li>
+                        <li>Event Streams führen BusinessLogic bei erreichen eines States aus</li>
+                        <li>ProzessManager trifft Entscheidungen die an den Event Store weitergegeben werden</li>
+                    </ul>
+                </section>
+                <section>
+                    <iframe src="https://giphy.com/embed/xT0xeuOy2Fcl9vDGiA" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="#">Demo</a>
+                        https://github.com/ShittySoft/symfony-live-berlin-2019-cqrs-es-workshop</p>
+                </section>
 				<div class="nxs--logo" id="united-logo"><img src="assets/nexus-united.png" alt="nexus united"/></div>
 			</div>
 		</div>

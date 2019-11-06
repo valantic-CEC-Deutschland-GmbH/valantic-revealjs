@@ -26,52 +26,48 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h4>Symfony Forms in Detail</h4>
+					<h4>Symfony Forms in Detail (WS 1)</h4>
 					<ul>
-						<li>Controller creation</li>
-						<li>Form creation</li>
-						<li>empty_data if no setData is called (data array is passed)</li>
-						<li>data_class zum setzen des DTO</li>
-						<li>property_path - wenn die property im dto anders heißt als im formular</li>
+						<li>Controller / Form creation (Symfony Docs)</li>
+						<li>empty_data (callback with data array for mapping)</li>
+						<li>data_class (Model Zuweisung)</li>
+						<li>property_path (bei anders benannter property im dto zum FormField)</li>
 					</ul>
-					<a href="#">Demo</a>
-					https://github.com/chr-hertel/product-crud
+					<p><a href="#">Demo</a>
+					https://github.com/chr-hertel/product-crud</p>
 				</section>
 				<section>
-					<h4>CQRS Event Sourcing -> Meine Notes (1/3)</h4>
+					<h4>CQRS Event Sourcing (WS 2)</h4>
 					<ul>
-						<li>Prozess für Request Verarbeitung durch Varnish beschleunigen</li>
-						<li>CommandBus einführen für Aktionen wie neuer User</li>
-						<li>Regeln auf Commands erstellen und das ist die API</li>
-						<li>Commands führen unterschiedliche Layer aus (PSR15 Middlewares)</li>
-						<li>Commands sollten eine uuid haben die dann gelöscht werden kann im Fehlerfall</li>
-					</ul>
-					https://github.com/ShittySoft/symfony-live-berlin-2019-cqrs-es-workshop
-				</section>
-				<section>
-					<h4>CQRS Event Sourcing -> Meine Notes (2/3)</h4>
-					<ul>
-						<li>man braucht keine AuditLogs mehr (Mal prüfen für postgres)</li>
-						<li>die über Event Sourcing gesammelten Daten (immutable - unveränderbar) können ausgewertet werden um zu sehen warum z.b. ein user den Warenkorb bei 500€ abbricht</li>
-						<li>Ein Event ist immer eine State Mutation (Domain Events wären z.B. new RegisteredUser) werden im EventStore (DB) gespeichert (Nur Inserts)</li>
-						<li>Um zu sehen was der letzte State ist zu einem User, alle Events loopen via foreach (Functional programming called Fold)</li>
-						<li>Diese Events zum User werden nach Regeln verarbeitet um den aktuellen Status zu einem User zu ermitteln (z.B. mit Array Reduce)</li>
-						<li>Der Fold wird gespeichert um sich zu merken welche Events schon verarbeitet wurden um den Status zu ermitteln und dann nächstes mal erneut beim Fold zu starten. Also immer nur von jetzt zu weiter</li>
-						<li>Extract Load Tasks</li>
-						<li>Mit dem ermittelten State (über den Fold) wird Production befüllt um den aktuellen User State zu übermitteln (die relationale DB wird so gesehen als Cache benutzt). (Source of Truth in der Event Store DB)</li>
+						<li>CommandBus (für Aktionen)</li>
+						<li>Commands (dienen als API)</li>
+						<li>Ausgeführte Commands haben eine Eindeutigkeit (z.B. uuid)</li>
+						<li>Keine AuditLogs der DB mehr notwendig</li>
+						<li>Die gesammelten Daten sind unveränderbar</li>
+						<li>Auswertung der Daten möglich (z.B. Warenkorb Absprünge bei 500€)</li>
 					</ul>
 				</section>
 				<section>
-					<h4>CQRS Event Sourcing -> Meine Notes (3/3)</h4>
+					<h4>CQRS Event Sourcing (WS 2)</h4>
 					<ul>
-						<li>Event Streams -> z.b. wenn X,Y,Z ready sind starte -> Prozess</li>
-						<li>Die DB kann über den FOld Prozess (der den Event Store benutzt) wieder aufgebaut werden, kann vllt auch einen Tag dauern</li>
-						<li>Event Streams müssen nicht nur durch eine Queue abgebildet werden</li>
-						<li>ProzessManager weiß an welcher Position die Events das letztemal verabarbeitet wurden</li>
-						<li>ProzessManager hat busines logic und trifft eine Entscheidung die wieder in den Event Store zurück geht</li>
-						<li>Am besten eine Sequence benutzen damit mehrere ProzessManager gleichzeitig den Store abarbeiten können</li>
+						<li>Ein Ausgelöster Command (Event) ist eine State Mutation</li>
+						<li>Letzter State wird über looping ermittelt</li>
+						<li>State Index wird in die Datenbank geschrieben (aufgebaut vom Fold)</li>
+						<li>State Index kann über Fold Prozess aufgebaut werden</li>
 					</ul>
-					<a href="#">Demo (index.php)</a>
+				</section>
+				<section>
+					<h4>CQRS Event Sourcing (WS 2)</h4>
+					<ul>
+						<li>Event Store DB ist die Source of Truth</li>
+						<li>Event Streams führen BusinessLogic bei erreichen eines States aus</li>
+						<li>ProzessManager trifft Entscheidungen die an den Event Store weitergegeben werden</li>
+					</ul>
+				</section>
+				<section>
+					<iframe src="https://giphy.com/embed/xT0xeuOy2Fcl9vDGiA" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+					<p><a href="#">Demo</a>
+						https://github.com/ShittySoft/symfony-live-berlin-2019-cqrs-es-workshop</p>
 				</section>
 				<div class="nxs--logo"><img src="assets/nexus-united.png" alt="nexus united"/></div>
 			</div>

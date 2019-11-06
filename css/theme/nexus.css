@@ -1,7 +1,11 @@
 /**
  * Nexus Netsoft Group Theme
- * Author: Markus Schulera
+ * Author: Markus Schulera, Steven Zemelka
  */
+
+@import url(../../lib/font/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
 html * {
   color-profile: sRGB;
   rendering-intent: auto; }
@@ -26,7 +30,7 @@ body {
   background-color: #189b8c; }
 
 .reveal {
-  font-family: "Arial";
+  font-family: "Lato", "Arial";
   font-size: 40px;
   font-weight: normal;
   color: #ffffff; }

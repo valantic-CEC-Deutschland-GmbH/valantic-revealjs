@@ -25,9 +25,236 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-				<div class="nxs--logo"><img src="assets/nexus-united.png" alt="nexus united"/></div>
+				<section data-background="lib/img/Recap_Symfony-Live.jpg" class="hide-logo" id="start"></section>
+                <section>
+                    <h3>Themen</h3>
+                        <ul>
+                            <li class="fragment fade-in-then-semi-out" style="list-style: none">🚬 Testing</li>
+                            <li class="fragment fade-in-then-semi-out" style="list-style: none">Testing workshop</li>
+                        </ul>
+                </section>
+                <section>
+                    <h2>🚬 Testing</h2>
+                </section>
+                <section>
+                    <span class="fragment fade-in-then-out">200 ✅</span>
+                    <span class="fragment fade-in-then-out">302 👉🏻</span>
+                    <span class="fragment fade-in-then-out">404 ❌</span>
+                </section>
+                <section>
+                    <img  style="background: none;border: none; box-shadow: none" src="https://media.giphy.com/media/wDI6LqNY6Ixbi/giphy.gif" alt=""/>
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                The term ‘smoke testing’, it is said, came to software testing from a similar type of hardware testing, in which the device passed the test if it did not catch fire (or smoked) the first time it was turned on.
+                            </li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <img src="lib/img/smoke.jpg" style="background: none;border: none; box-shadow: none; width: 80%;"/>
+                </section>
+                <section>
+                    <img  style="background: none;border: none; box-shadow: none" src="http://giphygifs.s3.amazonaws.com/media/1M9fmo1WAFVK0/giphy.gif" alt="">
+                </section>
+                <section>
+                    <ul>
+                        <li class="fragment fade-in-then-semi-out" style="list-style: none">✅ Prüft ob die Software testbar ist</li>
+                        <li class="fragment fade-in-then-semi-out" style="list-style: none">✅ Erkennt grundlegende kritische Fehler</li>
+                        <li class="fragment fade-in-then-semi-out" style="list-style: none">✅ Sehr einfach zu implementieren</li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Spryker Setups blockieren scrutinizer, weil die so lange laufen</li>
+                            <li>smoke tests würden hier verhindern, dass diese ausgeführt werden, wenn etwas grundlegend kaputt ist</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+
+                </section>
+                <section class="hljs" data-line-numbers="1" >
+	                <pre><code class="hljs">composer require --dev shopsys/http-smoke-testing</code></pre></section>
+
+                <section class="hljs full-width" data-line-numbers="1">
+	<pre><code class="hljs" data-line-numbers="7-9,12-14">// tests/AppBundle/Smoke/SmokeTest.php
+class SmokeTest extends HttpSmokeTestCase
+{
+  protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
+  {
+    $routeConfigCustomizer
+      ->customize(function (RouteConfig $config, RouteInfo $info) {
+          if ($info->getRouteName()[0] === '_') {
+              $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
+          }
+      })
+      ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
+          $config->changeDefaultRequestDataSet('Log in as "user".')
+                 ->setAuth(new BasicHttpAuth('user', 'userpass'));
+      });
+  }
+}
+</code></pre>
+                </section>
+                <section>
+                    <pre><code class="hljs">php vendor/bin/phpunit tests/AppBundle/Smoke/SmokeTest.php</code></pre>
+                </section>
+
+                <section>
+                    <h3>Testing workshop</h3>
+                </section>
+                <section>
+                    <img src="lib/img/behat.png" style="background: none;border: none; box-shadow: none">
+                </section>
+                <section class="full-width">
+                    <pre><code class="hljs" style="max-height: 600px">Feature:
+  Background:
+    Given a ".com" domain name costs "EUR 10.00"
+
+  Scenario: Buying an available domain name
+    Given I am on the homepage
+    When I fill in "Domain name" with "totallyrandomdomainname.com"
+    And I press "Check availability"
+    Then I should see "totallyrandomdomainname.com is still available"
+    When I press "Register it now"
+    Then I should see "Fill in your details"
+    When I fill in the following:
+      | Name          | Matthias                  |
+      | Email address | matthiasnoback@gmail.com  |
+    And I press "Buy this domain name"
+    Then I should see "Pay for totallyrandomdomainname.com"
+    And I should see "Amount: EUR 10.00"
+    When I press "Pay"
+    Then I should see "You are now the owner of totallyrandomdomainname.com"</code></pre>
+                </section>
+                <section data-line-numbers="1" class="full-width">
+                    <pre><code data-line-numbers="3" class="hljs" style="max-height: 600px">Feature:
+  Background:
+    Given a ".com" domain name costs "EUR 10.00"
+
+  Scenario: Buying an available domain name
+    Given I am on the homepage
+    When I fill in "Domain name" with "totallyrandomdomainname.com"
+    And I press "Check availability"
+    Then I should see "totallyrandomdomainname.com is still available"
+    When I press "Register it now"
+    Then I should see "Fill in your details"
+    When I fill in the following:
+      | Name          | Matthias                  |
+      | Email address | matthiasnoback@gmail.com  |
+    And I press "Buy this domain name"
+    Then I should see "Pay for totallyrandomdomainname.com"
+    And I should see "Amount: EUR 10.00"
+    When I press "Pay"
+    Then I should see "You are now the owner of totallyrandomdomainname.com"</code></pre>
+                </section>
+                <section class="full-width">
+                    <pre><code class="hljs" style="max-height: 600px" data-noescape>    /**
+     * @Given /^a "([^"]*)" domain name costs "([^"]*)"$
+     *
+     * @param string $extension
+     * @param string $price
+     */
+    public function aDomainNameCosts($extension, $price)
+    {
+        [$currency, $amount] = explode(' ', $price);
+        $amount = round((float)$amount * 100);
+
+        /** @var GoutteDriver $driver */
+        $driver = $this->getSession()->getDriver();
+        $driver->getClient()->request('POST', $this->locatePath('/set-price'), [
+            'extension' => $extension,
+            'currency' => $currency,
+            'amount' => $amount
+        ]);
+        $this->assertResponseStatus(200);
+    }</code></pre>
+                </section>
+                <section data-line-numbers="1" class="full-width">
+                    <pre><code data-line-numbers="7" class="hljs" style="max-height: 600px">Feature:
+  Background:
+    Given a ".com" domain name costs "EUR 10.00"
+
+  Scenario: Buying an available domain name
+    Given I am on the homepage
+    When I fill in "Domain name" with "totallyrandomdomainname.com"
+    And I press "Check availability"
+    Then I should see "totallyrandomdomainname.com is still available"
+    When I press "Register it now"
+    Then I should see "Fill in your details"
+    When I fill in the following:
+      | Name          | Matthias                  |
+      | Email address | matthiasnoback@gmail.com  |
+    And I press "Buy this domain name"
+    Then I should see "Pay for totallyrandomdomainname.com"
+    And I should see "Amount: EUR 10.00"
+    When I press "Pay"
+    Then I should see "You are now the owner of totallyrandomdomainname.com"</code></pre>
+                </section>
+                <section class="full-width">
+                    <pre><code class="hljs php" style="max-height: 600px">
+    /**
+     * Fills in form field with specified id|name|label|value
+     * Example: When I fill in "username" with: "bwayne"
+     * Example: And I fill in "bwayne" for "username"
+     *
+     * @When /^(?:|I )fill in "(?P&lt;field&gt;(?:[^"]|\\")*)" with "(?P&lt;value&gt;(?:[^"]|\\")*)"$/
+     * @When /^(?:|I )fill in "(?P&lt;field&gt;(?:[^"]|\\")*)" with:$/
+     * @When /^(?:|I )fill in "(?P&lt;value&gt;(?:[^"]|\\")*)" for "(?P&lt;field&gt;(?:[^"]|\\")*)"$/
+     */
+    public function fillField($field, $value)
+    {
+        $field = $this->fixStepArgument($field);
+        $value = $this->fixStepArgument($value);
+        $this->getSession()->getPage()->fillField($field, $value);
+    }
+                    </code></pre>
+                </section>
+                <section>
+                    <h4>Symfony Forms in Detail (WS 1)</h4>
+                    <ul>
+                        <li>Controller / Form creation (Symfony Docs)</li>
+                        <li>empty_data (callback with data array for mapping)</li>
+                        <li>data_class (Model Zuweisung)</li>
+                        <li>property_path (bei anders benannter property im dto zum FormField)</li>
+                    </ul>
+                    <p><a href="#">Demo</a>
+                        https://github.com/chr-hertel/product-crud</p>
+                </section>
+                <section>
+                    <h4>CQRS Event Sourcing (WS 2)</h4>
+                    <ul>
+                        <li>CommandBus (für Aktionen)</li>
+                        <li>Commands (dienen als API)</li>
+                        <li>Ausgeführte Commands haben eine Eindeutigkeit (z.B. uuid)</li>
+                        <li>Keine AuditLogs der DB mehr notwendig</li>
+                        <li>Die gesammelten Daten sind unveränderbar</li>
+                        <li>Auswertung der Daten möglich (z.B. Warenkorb Absprünge bei 500€)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>CQRS Event Sourcing (WS 2)</h4>
+                    <ul>
+                        <li>Ein Ausgelöster Command (Event) ist eine State Mutation</li>
+                        <li>Letzter State wird über looping ermittelt</li>
+                        <li>State Index wird in die Datenbank geschrieben (aufgebaut vom Fold)</li>
+                        <li>State Index kann über Fold Prozess aufgebaut werden</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>CQRS Event Sourcing (WS 2)</h4>
+                    <ul>
+                        <li>Event Store DB ist die Source of Truth</li>
+                        <li>Event Streams führen BusinessLogic bei erreichen eines States aus</li>
+                        <li>ProzessManager trifft Entscheidungen die an den Event Store weitergegeben werden</li>
+                    </ul>
+                </section>
+                <section>
+                    <iframe src="https://giphy.com/embed/xT0xeuOy2Fcl9vDGiA" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="#">Demo</a>
+                        https://github.com/ShittySoft/symfony-live-berlin-2019-cqrs-es-workshop</p>
+                </section>
+				<div class="nxs--logo" id="united-logo"><img src="assets/nexus-united.png" alt="nexus united"/></div>
 			</div>
 		</div>
 
@@ -45,6 +272,34 @@
 					{ src: 'plugin/highlight/highlight.js', async: true }
 				]
 			});
+
+            function hideLogoOnStart() {
+                let slideID = Reveal.getCurrentSlide().id;
+                let nexusLogoSelector = document.getElementById('united-logo');
+                if (slideID === "start") {
+                    nexusLogoSelector.style.visibility = "hidden";
+                } else {
+                    nexusLogoSelector.style.visibility = "";
+                }
+            }
+
+            Reveal.addEventListener( 'ready', function( event ) {
+                hideLogoOnStart();
+            } );
+
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+            let slideClass = Reveal.getCurrentSlide().className;
+
+                function codeSlideFullWidth(className) {
+                    if (slideClass.includes(className)) {
+                        Reveal.configure({width: "80%"});
+                    } else {
+                        Reveal.configure({width: 960});
+                    }
+                }
+                codeSlideFullWidth("full-width");
+                hideLogoOnStart();
+            } );
 		</script>
 	</body>
 </html>

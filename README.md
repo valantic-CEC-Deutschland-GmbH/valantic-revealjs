@@ -2,6 +2,10 @@
 
 This repo contains reveal.js boilerplate code in our corporate identity design
 
+### Presentation History
+
+Select a branch from the github UI to view the conference summary.
+
 ### Full setup
 
 1. Install [Node.js](http://nodejs.org/) (9.0.0 or later)
@@ -15,6 +19,7 @@ This repo contains reveal.js boilerplate code in our corporate identity design
    ```sh
    $ cd nexusrevealjs
    ```
+1. Create a new branch from master with the conference name and date (e.g `symfonyLiveBerlin2019`)
 
 1. Install dependencies
    ```sh
@@ -30,6 +35,19 @@ This repo contains reveal.js boilerplate code in our corporate identity design
 
    You can change the port by using `npm start -- --port=8001`.
    
+1. Add your slides to `index.html`
+
+1. Add the link to the Hosten Version into the readme
+
+
+### Deployement
+
+```sh
+npm install --global surge
+surge # inside your project directory
+```
+  
+See [surge.sh documentation](https://surge.sh/) for more
    
 ### Contributors
 

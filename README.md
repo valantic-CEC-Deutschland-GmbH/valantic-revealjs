@@ -1,6 +1,6 @@
-### NEXUS United reveal.js template
+# NEXUS United @ SymfonyLiveBerlin2019
 
-This repo contains reveal.js boilerplate code in our corporate identity design
+**Hosted Version:** [LINK](http://milky-snow.surge.sh)
 
 ### Full setup
 
@@ -31,6 +31,5 @@ This repo contains reveal.js boilerplate code in our corporate identity design
    You can change the port by using `npm start -- --port=8001`.
    
    
-### Contributors
-
-thx @ **[mschulera](https://github.com/mschulera)** for the styling in our corporate identity design
+### Tools
+Deployed with [surge.sh](http://surge.sh)

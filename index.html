@@ -4,9 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Nexus United</title>
 
 		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/nexus.css">
 
@@ -25,8 +26,191 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h3>Making use of New Relic to tackle Spryker Performance Issues</h3>
+					<p>
+						<small>Created by <a href="https://www.nexus-united.com/">Nexus United</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>Nexus Intro</h2>
+					<ol>
+						<li>~104 Employees</li>
+						<li>~15 active spryker projects</li>
+						<li>Located in Langenfeld, Siegen und Romania</li>
+					</ol>
+				</section>
+				<section>
+					<h2>Project Intro</h2>
+					<ol>
+						<li>MVP ~3 month</li>
+						<li>Release ~1 year</li>
+						<li>~1200 JIRA Tickets</li>
+						<li>28 Contributors (git)</li>
+					</ol>
+				</section>
+				<section>
+					<h2>Project Intro</h2>
+					<ol>
+						<li>470.794 Products</li>
+						<li>Customer specific prices and availability</li>
+						<li>~3000 orders per day average</li>
+						<li>~1900 Customers</li>
+						<li>~60.000 daily page views</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Server setup</h3>
+					<table>
+						<thead>
+						<tr>
+							<th>SERVER</th>
+							<th>CPU</th>
+							<th>RAM</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>yves</td>
+							<td>8</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>zed</td>
+							<td>4</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>db</td>
+							<td>12</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>elastic</td>
+							<td>2</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>redis</td>
+							<td>2</td>
+							<td>24</td>
+						</tr>
+						<tr>
+							<td>rmq</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>jenkins</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h2>Release & Performance</h2>
+					<img src="https://media0.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif?cid=790b7611f56f262123530e53ef34764c5304b68d944e62fa&rid=giphy.gif" />
+				</section>
+				<section>
+					<h4>Inspections</h4>
+					<code class="hljs javascript">
+						....
+						xdebug.profiler_enable=1
+					</code>
+					<img src="https://media2.giphy.com/media/Zvgb12U8GNjvq/giphy.gif?cid=790b761162b853888535e77ffffa9898fe30aada4dc8e0e7&rid=giphy.gif"/>
+				</section>
+				<section>
+					<h4>Inspections</h4>
+					<p>
+						<a href="assets/Auswahl_102.png" target="_blank"><img src="assets/Auswahl_102.png"/></a>
+					</p>
+				</section>
+				<section>
+					<h4>Inspections</h4>
+					<ol>
+						<li>Enable NewRelic APM + Infrastructure Trial</li>
+						<li>Add to project</li>
+						<li>Talk with hoster to install on all servers</li>
+					</ol><br/><br/>
+					<i class="fas fa-bug"></i> No data in NewRelic
+				</section>
+				<section>
+					<span style="color: #C7D227;">
+							<i class="fas fa-times" style="color: red;"></i> newrelic.framework symfony2 (configured on servers)<br/>
+							<i class="fas fa-check" style="color: #00FF00;"></i> newrelic.framework auto-detect (should it be)
+					</span>
+				</section>
+				<section>
+					<h4>Inspections</h4>
+					<p>
+						<a href="assets/image%20(20).png" target="_blank"><img src="assets/image%20(20).png"/></a>
+					</p>
+				</section>
+				<section>
+					<h4>Issue</h4>
+					<p>
+						<i class="fas fa-bug"></i> Slow login due third party session creation<br/><br/>
+						<span style="color: #C7D227;">
+							<i class="fas fa-check" style="color: #00FF00;"></i> Extracted to async process<br/>
+						</span>
+					</p>
+				</section>
+				<section>
+					<h4>Issue</h4>
+					<p>
+						<i class="fas fa-bug"></i> Slow data importers<br/><br/>
+						<span style="color: #C7D227;">
+							<i class="fas fa-check" style="color: #00FF00;"></i> Increased RMQ parallel workers<br/>
+							<a href="assets/Auswahl_106.png" target="_blank"><img src="assets/Auswahl_106.png"/></a><br/>
+							WIP: Remove facade calls and use propel directly
+						</span>
+					</p>
+				</section>
+				<section>
+					<h4>Issue</h4>
+					<p>
+						<i class="fas fa-bug"></i> Slow P&S process and wrong data<br/>
+						<i class="fas fa-check" style="color: #00FF00;"></i> Replace plugins and trigger in bulk<br/>
+						<img src="assets/Auswahl_103.png" /><br/>
+					</p>
+				</section>
+				<section>
+					<h2>Issue</h2>
+					<p>
+						<i class="fas fa-bug"></i> Slow Database and too many Database calls<br/><br/>
+						<code class="hljs javascript" style="font-size: 15px;">
+							EXPLAIN ANALYSE SELECT * FROM spy_company_role_to_permission WHERE fk_company_role = 562765;<br/>
+							# ...cost=0.00..<span style="color:red; font-weight: bold;">19032.90</span>....
+						</code>
+
+						<a href="assets/Auswahl_105.png" target="_blank"><img src="assets/Auswahl_105.png"/></a>
+					</p>
+				</section>
+				<section>
+					<h2>Issue</h2>
+					<p>
+						<i class="fas fa-check" style="color: #00FF00;"></i> Adjust index generator to generate index for composite PKs<br/>
+
+						<code class="hljs javascript" style="font-size: 15px;">
+							EXPLAIN ANALYSE SELECT * FROM spy_company_role_to_permission WHERE fk_company_role = 562765;<br/>
+							# ...cost=0.00..<span style="color:#00FF00; font-weight: bold;">24.12</span>....
+						</code>
+					</p>
+				</section>
+				<section>
+					<h2>Conclusion</h2>
+					<ol>
+						<li>Spryker help (<a href="http://support.spryker.com/">support.spryker.com</a>)</li>
+						<li>Spryker community slack (<a href="http://slackcommunity.spryker.com/">slackcommunity.spryker.com</a>)</li>
+						<li>xDebug and NewRelic profiling (<a href="https://xdebug.org/docs/profiler">xdebug.org/docs/profiler</a>, <a href="https://newrelic.com">newrelic.com</a>)</li>
+						<li>Improve Performance = Measure & Change</li>
+					</ol>
+				</section>
+				<section>
+					<h2>Thanks</h2>
+					<img src="https://media0.giphy.com/media/S3Ot3hZ5bcy8o/giphy.gif?cid=790b7611c73735ccba5166e195d50cf3b87ebcda43394391&rid=giphy.gif" />
+				</section>
 				<div class="nxs--logo"><img src="assets/nexus-united.png" alt="nexus united"/></div>
 			</div>
 		</div>

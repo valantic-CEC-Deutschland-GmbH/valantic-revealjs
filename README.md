@@ -1,6 +1,7 @@
 ### NEXUS United reveal.js template
 
-This repo contains reveal.js boilerplate code in our corporate identity design
+This repo contains spryker usergroup presentation.
+Demo: https://tasteless-passenger.surge.sh
 
 ### Presentation History
 

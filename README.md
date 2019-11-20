@@ -1,7 +1,7 @@
 ### NEXUS United reveal.js template
 
 This repo contains spryker usergroup presentation.
-Demo: https://tasteless-passenger.surge.sh
+Demo: https://symptomatic-kitty.surge.sh
 
 ### Presentation History
 

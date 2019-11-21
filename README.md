@@ -1,7 +1,7 @@
 # NEXUS United reveal.js template
 
-This repo contains reveal.js boilerplate code in our corporate identity design.
-Select a branch from the github UI to view already created presentations. 
+This repo contains Reveal.js boilerplate code in our corporate identity design.
+> Select a branch from the Github UI to view already created presentations. 
 
 ## Setup Requirements 
 
@@ -13,8 +13,8 @@ Select a branch from the github UI to view already created presentations.
 1. Create a fork from this repository
 2. Make your changes
 3. Create a pull request into a **new branch** on this main repository
-4. Your presentation will now be automatically deployed on [surge.sh](https://surge.sh)
-5. You can find the url to your presentation on the [github actions tab](https://github.com/nexusunited/nexusrevealjs/actions)
+4. Your presentation will now be automatically deployed on [Surge.sh](https://surge.sh)
+5. You can find the url to your presentation on the [Github actions tab](https://github.com/nexusunited/nexusrevealjs/actions)
 6. Add the surge.sh url to your readme
 
 ### Full setup

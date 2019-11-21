@@ -13,7 +13,7 @@ Select a branch from the github UI to view already created presentations.
 1. Create a fork from this repository
 2. Make your changes
 3. Create a pull request into a **new branch** on this main repository
-4. Your presentation will now be automatically deployed on [surge.sh](surge.sh)
+4. Your presentation will now be automatically deployed on [surge.sh](https://surge.sh)
 5. You can find the url to your presentation on the [github actions tab](https://github.com/nexusunited/nexusrevealjs/actions)
 6. Add the surge.sh url to your readme
 
@@ -45,8 +45,6 @@ Select a branch from the github UI to view already created presentations.
 
    You can change the port by using `npm start -- --port=8001`.
    
-  
-See [surge.sh documentation](https://surge.sh/) for more
    
 ### Contributors
 

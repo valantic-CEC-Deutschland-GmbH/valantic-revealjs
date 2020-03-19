@@ -474,17 +474,27 @@ body {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.reveal code {
-    font-family: monospace;
-    text-transform: none;
-}
+/*.reveal code {*/
+/*    font-family: monospace;*/
+/*    text-transform: none;*/
+/*}*/
 
-.reveal pre code {
+/*.reveal pre code {*/
+/*    display: block;*/
+/*    padding: 5px;*/
+/*    overflow: auto;*/
+/*    max-height: 400px;*/
+/*    word-wrap: normal;*/
+/*}*/
+
+.reveal .code pre{
+    width: 100%;
     display: block;
-    padding: 5px;
+    padding: 0px;
     overflow: auto;
-    max-height: 400px;
     word-wrap: normal;
+    margin: 0;
+    box-shadow: none;
 }
 
 .reveal table {

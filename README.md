@@ -37,8 +37,7 @@ This repo contains Reveal.js boilerplate code in our corporate identity design.
 1. Open <http://localhost:8000> to view your presentation
 
    You can change the port by using `npm start -- --port=8001`.
-   
-   
-### Contributors
 
-thx @ **[mschulera](https://github.com/mschulera)** for the styling in our corporate identity design
+
+### Additions
+If you add some custom JS logic or style improvements to your presentation, consider making a pull request back into this repository

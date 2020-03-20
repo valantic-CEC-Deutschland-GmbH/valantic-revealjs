@@ -2,4 +2,4 @@
 
 SymfonyLiveBerlin2019 - Conference recap
 
-### URL: https://symfonyliveberlin2019.surge.sh
+### URL: https://nxs-symfonyliveberlin2019.surge.sh

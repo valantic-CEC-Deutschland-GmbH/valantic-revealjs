@@ -1,0 +1,23 @@
+name: Deploy to surge.sh
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@v1
+            -   name: Setup node
+                uses: actions/setup-node@v1
+                with:
+                    node-version: 9
+            -   name: Install surge
+                run: npm install -g surge
+            -   name: Install revealjs
+                run: npm install
+            -   name: Extract branch name
+                shell: bash
+                run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+                id: extract_branch
+            -   run: surge --project $GITHUB_WORKSPACE --domain https://nxs-${{ steps.extract_branch.outputs.branch }}.surge.sh --token ${{ secrets.SURGE_TOKEN }}

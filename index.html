@@ -25,138 +25,98 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
 				<section class="panorama" data-background="assets/backgrounds/mountains01.jpg">
 					<div class="nxs__logo">
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
                     <div class="nxs__title-wrapper">
-					    <h1 class="nxs__title">Lorem ipsum dolor</h1>
+					    <h1 class="nxs__title">Dev Insights</h1>
+						<h3 class="nxs__title" style="float: right">Glue Tests</h3>
                     </div>
 				</section>
-				<section class="agenda">
-					<h1 class="agenda__title">Agenda</h1>
-					<div class="agenda__image--wrapper">
-						<img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-					</div>
-					<div class="agenda__text--wrapper">
-						<div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-						<ol class="agenda__list">
-							<li>Die erste Zeile</li>
-							<li>Die zweite Zeile</li>
-							<li>Noch eine Zeile</li>
-							<li>Und das auch noch</li>
-						</ol>
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-                <section class="agenda">
-                    <h1 class="agenda__title">Agenda</h1>
-                    <div class="agenda__image--wrapper">
-                        <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-                    </div>
-                    <div class="agenda__text--wrapper">
-                        <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-                        <ol class="agenda__list">
-                            <li>Die erste Zeile</li>
-                            <li>Die zweite Zeile</li>
-                            <li>Noch eine Zeile</li>
-                            <li>Und das auch noch</li>
-                        </ol>
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
+
 				<section class="code">
-					<h1 class="code__title">Hier kommt die Überschrift hin</h1>
+					<h1 class="code__title">Glue Tests</h1>
 					<div class="code__text--wrapper">
-						<div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
+						<div class="code__text">Glue Tests sind "einfach" und decken die PO anfrage ab.</div>
 					</div>
 					<div class="code__snippet--wrapper">
                         <pre>
-                            <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
+                            <code class="hljs php">// tests/PowwowTest/Glue/ProductHighlightsRestApi/RestApi/ConcreteProductWithHighlightsCest.php
+public function productConcreteHaveHighlights(ProductHighlightsApiTester $tester): void
 {
-  // some code
-}
-</code></pre>
+	$sku = 'G-2010-07883';
+	$url = $tester->buildConcreteProductDataUrl($sku);
 
+	$tester->sendGET($url);
+
+	$tester->seeResponseCodeIs(HttpCode::OK);
+	$tester->seeResponseIsJson();
+	$tester->assertProductDataResponseResourceHasHighlights();
+}
+							</code>
+						</pre>
 					</div>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
 				</section>
-                <section class="code full-width">
-                    <h1 class="code__title">Full-Width</h1>
-                    <div>
-                        <pre>
-<code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-  protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-  {
-    $routeConfigCustomizer
-      ->customize(function (RouteConfig $config, RouteInfo $info) {
-          if ($info->getRouteName()[0] === '_') {
-              $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-          }
-      })
-      ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-          $config->changeDefaultRequestDataSet('Log in as "user".')
-                 ->setAuth(new BasicHttpAuth('user', 'userpass'));
-      });
-  }
-}
-</code>
-                        </pre>
 
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
+				<section>
+					<section class="list">
+						<h1 class="list__title">Sind API Tests besser?</h1>
+						<div class="list__text--wrapper">
+							<div class="list__text fragment">
+								<img src="assets/postman_logo.png" alt="" height="120px"/>
+							</div>
+						</div>
+						<div class="list__text--wrapper fragment">
+							<a href="https://github.com/postmanlabs/newman">github.com/postmanlabs/newman</a>
+						</div>
+						<div class="list__text--wrapper">
+							<div class="list__text fragment">
+								<img src="assets/insomnia_logo.png" alt="" height="120px"/>
+							</div>
+						</div>
+						<div class="nxs__logo--background"></div>
+						<div class="nxs__logo">
+							<img src="assets/nexus-united.png" alt="nexus united"/>
+						</div>
+					</section>
+
+					<section class="list">
+						<h1 class="list__title">Sind API Tests besser?</h1>
+						<div class="list__text">
+							<ul>
+								<li class="fragment">Nur GET testbar</li>
+								<li class="fragment">nur statische tests</li>
+								<li class="fragment">HttpClient ist nicht anpassbar</li>
+							</ul>
+							<div class="centered fragment" style="margin-top: 15px">
+								<iframe src="https://giphy.com/embed/10pR6dUXHBpZSg" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+							</div>
+						</div>
+						<div class="nxs__logo--background"></div>
+						<div class="nxs__logo">
+							<img src="assets/nexus-united.png" alt="nexus united"/>
+						</div>
+					</section>
+
+					<aside class="notes">
+						Newman eine schnelle lösung für API Tests
+					</aside>
+				</section>
+
 				<section class="list">
-					<h1 class="list__title">Eine Listenseite</h1>
-					<div class="list__text--wrapper">
-						<div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<ul class="list__list">
-						<li class="list__list--item">Die erste Zeile</li>
-						<li class="list__list--item">Die nächste Zeile</li>
-						<li class="list__list--item">Noch eine Zeile</li>
-						<li class="list__list--item">Und das auch noch</li>
-					</ul>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered is--panorama" data-background-image="assets/backgrounds/mountains01.jpg">
-
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered">
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
+					<h1 class="list__title">Was sollte Glue Test abgedeckt sein?</h1>
+					<div class="list__text">
+						<ul>
+							<li class="fragment">PO Akzeptanzkriterien</li>
+							<li class="fragment">Daten die im Endpunkt gefordert sind</li>
+							<li class="fragment">Festgelegte Schemata für die Kommunikation</li>
+						</ul>
 					</div>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
@@ -164,6 +124,14 @@ class SmokeTest extends HttpSmokeTestCase
 					</div>
 				</section>
 
+				<section class="panorama" data-background="assets/backgrounds/mountains01.jpg">
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<div class="nxs__title-wrapper">
+						<h1 class="nxs__title">Fragen?</h1>
+					</div>
+				</section>
 			</div>
 		</div>
 

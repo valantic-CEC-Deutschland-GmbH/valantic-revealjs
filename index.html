@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>DevInsights - Glue Tests</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -36,12 +36,13 @@
                     </div>
 				</section>
 
-				<section class="code">
-					<h1 class="code__title">Glue Tests</h1>
-					<div class="code__text--wrapper">
-						<div class="code__text">Glue Tests sind "einfach" und decken die PO anfrage ab.</div>
-					</div>
-					<div class="code__snippet--wrapper">
+				<section>
+					<section class="code">
+						<h1 class="code__title">Glue Tests</h1>
+						<div class="code__text--wrapper">
+							<div class="code__text">Glue Tests sind "einfach" und decken die PO anfrage ab.</div>
+						</div>
+						<div class="code__snippet--wrapper">
                         <pre>
                             <code class="hljs php">// tests/PowwowTest/Glue/ProductHighlightsRestApi/RestApi/ConcreteProductWithHighlightsCest.php
 public function productConcreteHaveHighlights(ProductHighlightsApiTester $tester): void
@@ -57,11 +58,83 @@ public function productConcreteHaveHighlights(ProductHighlightsApiTester $tester
 }
 							</code>
 						</pre>
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
+						</div>
+						<div class="nxs__logo--background"></div>
+						<div class="nxs__logo">
+							<img src="assets/nexus-united.png" alt="nexus united"/>
+						</div>
+					</section>
+					<section class="code">
+						<h1 class="code__title">Glue Tests</h1>
+						<div class="code__text--wrapper">
+							<div class="code__text">Arrange</div>
+						</div>
+						<div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs php">public function buildConcreteProductDataUrl(string $sku): string
+{
+	return 'http://'.$this->formatFullUrl(
+		'{urlData}/{resourceProductSku}',
+		[
+			'urlData' => 'concrete-products',
+			'resourceProductSku' => $sku,
+		]
+	);
+}
+							</code>
+						</pre>
+						</div>
+						<div class="nxs__logo--background"></div>
+						<div class="nxs__logo">
+							<img src="assets/nexus-united.png" alt="nexus united"/>
+						</div>
+					</section>
+					<section class="code">
+						<h1 class="code__title">Glue Tests</h1>
+						<div class="code__text--wrapper">
+							<div class="code__text">Act</div>
+						</div>
+						<div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs php">protected function execute($method, $url, $parameters = [], $files = [])
+{
+// allow full url to be requested
+if (strpos($url, '://') === false) {
+	$url = $this->config['url'] . $url;
+	if ($this->config['url'] && strpos($url, '://') === false && $this->config['url'][0] !== '/') {
+		$url = '/' . $url;
+	}
+}
+...
+							</code>
+						</pre>
+						</div>
+						<div class="nxs__logo--background"></div>
+						<div class="nxs__logo">
+							<img src="assets/nexus-united.png" alt="nexus united"/>
+						</div>
+					</section>
+					<section class="code">
+						<h1 class="code__title">Glue Tests</h1>
+						<div class="code__text--wrapper">
+							<div class="code__text">Assert</div>
+						</div>
+						<div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs php">public function assertProductDataResponseResourceHasHighlights(): void
+{
+	$highlightData = $this->grabDataFromResponseByJsonPath('$.data.attributes.productHighlights');
+
+	$this->assertNotEmpty($highlightData);
+}
+							</code>
+						</pre>
+						</div>
+						<div class="nxs__logo--background"></div>
+						<div class="nxs__logo">
+							<img src="assets/nexus-united.png" alt="nexus united"/>
+						</div>
+					</section>
 				</section>
 
 				<section>

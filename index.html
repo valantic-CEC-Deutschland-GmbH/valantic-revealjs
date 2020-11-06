@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Elasticsearch</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -30,90 +30,159 @@
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
                     <div class="nxs__title-wrapper">
-					    <h1 class="nxs__title">Lorem ipsum dolor</h1>
+					    <h1 class="nxs__title">What is Elastic🔎?</h1>
                     </div>
 				</section>
-				<section class="agenda">
-					<h1 class="agenda__title">Agenda</h1>
-					<div class="agenda__image--wrapper">
-						<img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-					</div>
-					<div class="agenda__text--wrapper">
-						<div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-						<ol class="agenda__list">
-							<li>Die erste Zeile</li>
-							<li>Die zweite Zeile</li>
-							<li>Noch eine Zeile</li>
-							<li>Und das auch noch</li>
-						</ol>
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-                <section class="agenda">
-                    <h1 class="agenda__title">Agenda</h1>
-                    <div class="agenda__image--wrapper">
-                        <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
+                <section class="list">
+                    <h1 class="list__title">Agenda</h1>
+                    <div class="list__text--wrapper">
+                        <div class="list__text"></div>
                     </div>
-                    <div class="agenda__text--wrapper">
-                        <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-                        <ol class="agenda__list">
-                            <li>Die erste Zeile</li>
-                            <li>Die zweite Zeile</li>
-                            <li>Noch eine Zeile</li>
-                            <li>Und das auch noch</li>
-                        </ol>
-                    </div>
+                    <ul class="list__list">
+                        <li class="list__list--item fragment fade-in-then-semi-out">Elasticsearch explained</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">ELK Stack</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Indices & Shards</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Insert</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Mapping</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Search</li>
+                    </ul>
                     <div class="nxs__logo--background"></div>
                     <div class="nxs__logo">
                         <img src="assets/nexus-united.png" alt="nexus united"/>
                     </div>
                 </section>
-				<section class="code">
-					<h1 class="code__title">Hier kommt die Überschrift hin</h1>
-					<div class="code__text--wrapper">
-						<div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-					</div>
-					<div class="code__snippet--wrapper">
+                <section class="list">
+                    <h1 class="list__title">Elasticsearch explained</h1>
+                    <div class="list__text--wrapper">
+                        <div class="list__text fragment fade-up">Analytics & full text search-engine</div>
+                    </div>
+                    <ul class="list__list">
+                        <li class="list__list--item fragment fade-in-then-semi-out">Search functionality for applications</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Application Performance Management (APM)</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Machine learning</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Data visualization & analytics</li>
+                    </ul>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Search, autocompletion, relevance, correcting typos, synonyms and relevance</li>
+                            <li>Analyze application and system logs e.g: Error, access or CPU / Memory usage</li>
+                            <li>ML requires lots of data, can aggregate results and visualize them e.g: forecast for needed call center stuff</li>
+                            <li>Which country bought most products or how many visitors did we have </li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="list">
+                    <h1 class="list__title">ELK stack</h1>
+                    <div class="list__text--wrapper">
+                        <div class="list__text fragment fade-in-then-semi-out">What does ELK stand for?</div>
+                    </div>
+                    <ul class="list__list">
+                        <li class="list__list--item fragment fade-in-then-semi-out">Elasticsearch</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Logstash</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Kibana</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Beats</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">X-Pack</li>
+                    </ul>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Event processing pipeline, reads /transform access logs and anonymize IP addresses</li>
+                            <li>All kinds of dashboards / charts (Pi, line, Bar Graphs)</li>
+                            <li>Development tool for ES</li>
+                            <li>Plugins for logstash (apache, sql or php)</li>
+                            <li>Security, User & Role System or alerting</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="centered is--panorama" data-background-image="assets/kibana.png"></section>
+                <section class="centered is--panorama" data-background-image="assets/elk.png"></section>
+                <section class="centered">
+                    <h1 class="centered__title">Indices & Shards</h1>
+                    <div class="centered__text--wrapper fragment fade-in-then-semi-out">
+                        <div class="centered__text ">Splitting indeces into shards</div>
+                    </div>
+                    <div class="centered__image--wrapper">
+                        <img src="assets/index.png" alt="" class="centered__image">
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Nodes on single or multiple VMs / Physical machines</li>
+                            <li>Product index</li>
+                            <li>Development tool for ES</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Creating an index</h1>
+                    <div class="code__text--wrapper">
+                        <div class="code__text">Elasticsearch provides an REST Api to manage documents</div>
+                    </div>
+                    <div class="code__snippet--wrapper">
                         <pre>
-                            <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
+                            <code class="hljs rest">PUT /products
 {
-  // some code
+    "settings": {
+        "number_of_shards": 2,
+        "number_of_replicas": 2
+    }
 }
 </code></pre>
 
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-                <section class="code full-width">
-                    <h1 class="code__title">Full-Width</h1>
-                    <div>
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                </section>
+                <section class="centered">
+                    <h1 class="centered__title">Hint time!</h1>
+                    <div class="centered__text--wrapper fragment fade-in-then-semi-out">
+                        <div class="centered__text ">action_auto_create_index</div>
+                    </div>
+                    <div class="centered__image--wrapper">
+                        <img src="https://media.giphy.com/media/McaQOdc7DajO2Dm7gx/giphy.gif" alt="" class="centered__image">
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Inserting data</h1>
+                    <div class="code__snippet--wrapper">
                         <pre>
-<code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
+                            <code class="hljs rest">POST /products/_doc
 {
-  protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-  {
-    $routeConfigCustomizer
-      ->customize(function (RouteConfig $config, RouteInfo $info) {
-          if ($info->getRouteName()[0] === '_') {
-              $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-          }
-      })
-      ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-          $config->changeDefaultRequestDataSet('Log in as "user".')
-                 ->setAuth(new BasicHttpAuth('user', 'userpass'));
-      });
-  }
+    "name": "Coffee Maker",
+    "price": 64,
+    "in_stock": 10
 }
-</code>
-                        </pre>
+
+# response
+{
+    ...,
+    "_shards": {
+        "total":      3,
+        "successful": 3
+        "failed":     0
+    },
+}
+</code></pre>
 
                     </div>
                     <div class="nxs__logo--background"></div>
@@ -121,49 +190,493 @@ class SmokeTest extends HttpSmokeTestCase
                         <img src="assets/nexus-united.png" alt="nexus united"/>
                     </div>
                 </section>
-				<section class="list">
-					<h1 class="list__title">Eine Listenseite</h1>
-					<div class="list__text--wrapper">
-						<div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<ul class="list__list">
-						<li class="list__list--item">Die erste Zeile</li>
-						<li class="list__list--item">Die nächste Zeile</li>
-						<li class="list__list--item">Noch eine Zeile</li>
-						<li class="list__list--item">Und das auch noch</li>
-					</ul>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered is--panorama" data-background-image="assets/backgrounds/mountains01.jpg">
+                <section class="code">
+                    <h1 class="code__title">Elasticsearch REST Api changes</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest"># ES >= 6.8
+POST /products/_doc</code></pre>
 
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered">
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
+                    </div>
+                    <div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs rest"># ES < 6.8
+POST /products</code></pre>
 
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Getting Documents</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /products/_doc/100
+{
+    "_index": "products",
+    ...,
+    "found": true
+    "_source": {
+    "name": "Coffee Maker",
+    "price": 64,
+    "in_stock": 4
+	}
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Updating Documents</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">POST /products/_update/100
+{
+    "doc": {
+        "in_stock": 3
+    }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                </section>
+                <section class="centered">
+                    <h1 class="centered__title">Hint time!</h1>
+                    <div class="centered__text--wrapper fragment fade-in-then-semi-out">
+                        <div class="centered__text ">ES documents are <b>immutable.</b></div>
+                    </div>
+                    <div class="centered__image--wrapper">
+                        <img src="https://media.giphy.com/media/McaQOdc7DajO2Dm7gx/giphy.gif" alt="" class="centered__image">
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>ES replaces the doc in background</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Scripted Updates</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">POST /products/_update/100
+{
+    "script": {
+        "source": "ctx._source.in_stock--"
+    }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Mapping in general</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">PUT /product/default/_mapping
+{
+    "properties": {
+        "price": {
+            "type": "double"
+        }
+    }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Like relational databases</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Insert without mapping</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">POST /products/_doc
+{
+    "price": 6.4,
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>But i inserted data without mapping!</li>
+                            <li>Inserts can be done without mapping</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="centered">
+                    <h1 class="centered__title">Mapping</h1>
+                    <div class="centered__text--wrapper">
+                        <div class="centered__text ">Did Elasticsearch assume our <strike>gender</strike> Mapping?</div>
+                    </div>
+                    <div class="centered__image--wrapper fragment fade-in-then-semi-out">
+                        <img src="https://media1.tenor.com/images/d15e01d9af07fe3d4a21c4bfbc67879e/tenor.gif?itemid=12026482" alt="" class="centered__image">
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>ES replaces the doc in background</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="centered">
+                    <h1 class="centered__title">Hint time!</h1>
+                    <div class="centered__text--wrapper fragment fade-in-then-semi-out">
+                        <div class="centered__text ">'Attachment Data Type' enables search for PTT, PDF, RTF and so on</div>
+                    </div>
+                    <div class="centered__image--wrapper">
+                        <img src="https://media.giphy.com/media/McaQOdc7DajO2Dm7gx/giphy.gif" alt="" class="centered__image">
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Keyword mapping</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">PUT /product/default/_mapping
+{
+    "properties": {
+        "tags": {
+            "type": "keyword"
+        }
+    }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li> structured Data, like order status, emails or filters</li>
+                            <li>used for exact matches</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Introduction to searching</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}</code></pre>
+
+                    </div>
+                    <div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "match": {
+        "description": "coffee maker"
+    }
+  }
+}
+# search with request uri
+GET /product/_search?q=description:coffee%20maker</code></pre>
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Term queries</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "terms": {
+        "tags.keyword": [
+            "Soup",
+            "Cake"
+        ]
+    }
+  }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li> structured Data, like order status, emails or filters</li>
+                            <li>matches all documents where the term appears</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Matching with range values</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "range": {
+        "in_stock": {
+            "gte": 1,
+            "lte": 5
+        }
+    }
+  }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Matching based on prefix</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "prefix": {
+        "tags.keyword": "Coffee" // Matches Coffee maker
+    }
+  }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Searching with wildcards</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "wildcard": {
+        "tags.keyword": "Coffee*" //  Matches Coffee maker
+
+    }
+  }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Match phrase</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "match_phrase": {
+        "title": "spaghetti puttanesca"
+    }
+  }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Matches if the first 2 values are in the same order</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Multi match</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "multi_match": {
+        "query": "pasta",
+        "fields": ["title", "description"]
+
+    }
+  }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Matches if the query string is present within `title` or `description`</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Boolean queries</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "bool": {
+        "must": [
+            {
+                "match": {
+                    "ingredients.name": "parmesan"
+                }
+            },
+            {
+                "range": {
+                    "preperation_time.minutes": {
+                        "lte": 15
+                    }
+                }
+            }
+        ]
+    }
+  }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Is like a where clause</li>
+                            <li>must not</li>
+                            <li>must not</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="code">
+                    <h1 class="code__title">Must & must not</h1>
+                    <div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs rest">GET /product/_search
+{
+  "query": {
+    "bool": {
+        "must": [
+            {
+                "match": {
+                    "ingredients.name": "parmesan"
+                }
+            }
+        ],
+        "must_not": [
+            {
+                "match": {
+                    "ingredients.name": "tuna"
+                }
+            }
+        ]
+    }
+  }
+}
+</code></pre>
+
+                    </div>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Is like a where clause</li>
+                            <li>must not</li>
+                            <li>must not</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="list">
+                    <h1 class="list__title">Even more topics!</h1>
+                    <div class="list__text--wrapper">
+                        <div class="list__text"></div>
+                    </div>
+                    <ul class="list__list">
+                        <li class="list__list--item fragment fade-in-then-semi-out">Joining queries</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Result size & pagination</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Sorting</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Aggregations</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Relevance scores</li>
+                        <li class="list__list--item fragment fade-in-then-semi-out">Analyzers</li>
+                    </ul>
+                    <div class="nxs__logo--background"></div>
+                    <div class="nxs__logo">
+                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                    </div>
+                </section>
 			</div>
 		</div>
 

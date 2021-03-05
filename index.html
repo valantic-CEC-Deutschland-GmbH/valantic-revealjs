@@ -12,6 +12,8 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -30,21 +32,39 @@
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
                     <div class="nxs__title-wrapper">
-					    <h1 class="nxs__title">Lorem ipsum dolor</h1>
+					    <h1 class="nxs__title" style="">SPA & PWA</h1>
                     </div>
 				</section>
-				<section class="agenda">
+				<section class="list">
+					<div class="list__text--wrapper" style="text-align: center;">
+						<div style="font-family: 'Permanent Marker', cursive;transform: rotate(-20deg);font-size: 100px;line-height: 50px;position: relative; top: 160px">
+							<span style="color: #0D3349;">Alike</span><br />
+							<span style="color: #C7D227;">but</span><br />
+							<span style="color: #0D3349;">different</span>
+						</div>
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="agenda" id="fragments">
 					<h1 class="agenda__title">Agenda</h1>
 					<div class="agenda__image--wrapper">
-						<img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
+						<div style="font-family: 'Permanent Marker', cursive;transform: rotate(-20deg);font-size: 80px;line-height: 40px;position: relative;top: -60px;">
+							<span style="color: #0D3349;">Alike</span><br />
+							<span style="color: #C7D227;">but</span><br />
+							<span style="color: #0D3349;">different</span>
+						</div>
 					</div>
 					<div class="agenda__text--wrapper">
-						<div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
 						<ol class="agenda__list">
-							<li>Die erste Zeile</li>
-							<li>Die zweite Zeile</li>
-							<li>Noch eine Zeile</li>
-							<li>Und das auch noch</li>
+							<li class="fragment">Introduction</li>
+							<li class="fragment">SPA Lifecycle & Architecture</li>
+							<li class="fragment">Features of a SPA</li>
+							<li class="fragment">PWA Lifecycle & Architecture</li>
+							<li class="fragment">Features of a PWA</li>
+							<li class="fragment">Conclusion</li>
 						</ol>
 					</div>
 					<div class="nxs__logo--background"></div>
@@ -52,118 +72,269 @@
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
 				</section>
-                <section class="agenda">
-                    <h1 class="agenda__title">Agenda</h1>
-                    <div class="agenda__image--wrapper">
-                        <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-                    </div>
-                    <div class="agenda__text--wrapper">
-                        <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-                        <ol class="agenda__list">
-                            <li>Die erste Zeile</li>
-                            <li>Die zweite Zeile</li>
-                            <li>Noch eine Zeile</li>
-                            <li>Und das auch noch</li>
-                        </ol>
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
-				<section class="code">
-					<h1 class="code__title">Hier kommt die Überschrift hin</h1>
-					<div class="code__text--wrapper">
-						<div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-					</div>
-					<div class="code__snippet--wrapper">
-                        <pre>
-                            <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-  // some code
-}
-</code></pre>
-
+				<section class="list" id="fragments">
+					<h1 class="list__title">PWA? SPA?</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img class="fragment" src="assets/questionmarks.webp" alt="" />
 					</div>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
 				</section>
-                <section class="code full-width">
-                    <h1 class="code__title">Full-Width</h1>
-                    <div>
-                        <pre>
-<code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-  protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-  {
-    $routeConfigCustomizer
-      ->customize(function (RouteConfig $config, RouteInfo $info) {
-          if ($info->getRouteName()[0] === '_') {
-              $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-          }
-      })
-      ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-          $config->changeDefaultRequestDataSet('Log in as "user".')
-                 ->setAuth(new BasicHttpAuth('user', 'userpass'));
-      });
-  }
-}
-</code>
-                        </pre>
-
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
-				<section class="list">
-					<h1 class="list__title">Eine Listenseite</h1>
-					<div class="list__text--wrapper">
-						<div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
+				<section class="list" id="fragments">
+					<h1 class="list__title">Lifecycle and features</h1>
+					<div class="list__text--wrapper fragment">
+						<p>To best understand the workings of a SPA we should compare it to a traditional website.</p>
 					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title">Regular web applications</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img src="assets/traditional-lifecycle.png" alt="" height="480" class="centered__image">
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list" id="fragments">
+					<h1 class="list__title">Regular web application</h1>
 					<ul class="list__list">
-						<li class="list__list--item">Die erste Zeile</li>
-						<li class="list__list--item">Die nächste Zeile</li>
-						<li class="list__list--item">Noch eine Zeile</li>
-						<li class="list__list--item">Und das auch noch</li>
+						<li class="list__list--item fragment">JS loaded again on every request</li>
+						<li class="list__list--item fragment">Time to first byte occurs multiple times</li>
+						<li class="list__list--item fragment">Traditional routing (Backend based, direct links to files)</li>
+						<li class="list__list--item fragment">New pages are loaded completely on each request</li>
+						<li class="list__list--item fragment">Whole website is reloading</li>
 					</ul>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
 				</section>
-				<section class="centered is--panorama" data-background-image="assets/backgrounds/mountains01.jpg">
-
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered">
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
+				<section class="list">
+					<h1 class="list__title">Single page applications</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img src="assets/spa-lifecycle.png" alt="" height="480" class="centered__image">
 					</div>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
 				</section>
+				<section class="list" id="fragements">
+					<h1 class="list__title">Single page applications</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">JS is loaded only <strong>once</strong></li>
+						<li class="list__list--item fragment">Time to first byte occurs only <strong>once</strong></li>
+						<li class="list__list--item fragment">Routing through JS </li>
+						<li class="list__list--item fragment">Content updated via ajax</li>
+						<li class="list__list--item fragment">Faster/more efficient loading</li>
+						<li class="list__list--item fragment">Smoother experience for user</li>
+						<li class="list__list--item fragment">Prominent Example: <strong>Gmail</strong></li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list" id="fragments">
+					<h1 class="list__title">So...</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img src="assets/diff.gif" alt="" class="fragment" />
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list" id="fragments">
+					<h1 class="list__title">Web App Manifest 🗒</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">Delivers information about an application (Name, author, icons and description) in a JSON file.</li>
+						<li class="list__list--item fragment">It allows web applications to be "installed" on the home screen of a device</li>
+						<li class="list__list--item fragment">Can reference to native apps in stores as well</li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="code" id="fragments">
+					<h1 class="code__title">Web App Manifest 🗒️</h1>
+					<div class="code__snippet--wrapper fragment">
+                        <pre>
+                            <code class="hljs json">{
+  "name": "Awesome Web App",
+  "short_name": "AwSome",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color" : "#fff" ,
+  "description": "It's too awesome to be used.",
+  "icons": [{
+    ...
+  }],
+  "related_applications": [{
+    "platform": "Web"
+  }, {
+    "platform": "play",
+    "url": "https://play.google.com/store/apps/details?id=awsome.app"
+  }]
+}
+							</code></pre>
 
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="code" id="fragments">
+					<h1 class="code__title">Service Workers! 🛠️</h1>
+					<div class="code__text--wrapper">
+						<div class="code__text fragment">The thing we actually "install" on the users device</div>
+					</div>
+					<div class="code__snippet--wrapper fragment">
+                        <pre>
+                            <code class="hljs js">// The install handler takes care of
+// precaching the resources we always need.
+self.addEventListener('install', event => {
+  event.waitUntil(
+	caches.open(PRECACHE)
+	  .then(cache => cache.addAll(PRECACHE_URLS))
+	  .then(self.skipWaiting())
+  );
+});
+							</code></pre>
+
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title">PWA initial request</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img src="assets/pwa-diagram-01.png" alt="" height="480" class="centered__image">
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list" id="fragments">
+					<h1 class="list__title">PWA initial request</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">Service Worker is between app and network</li>
+						<li class="list__list--item fragment">URL is cached on visit if not excluded</li>
+						<li class="list__list--item fragment">URL is served throug the app</li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list" id="fragments">
+					<h1 class="list__title">Whats the benefit?</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img src="assets/no-connection.webp" alt="" class="fragment" />
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title">PWA offline request</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img src="assets/pwa-diagram-02.png" alt="" height="480" class="centered__image">
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title" id="fragments">PWA offline request</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">Service Worker checks for cached pages</li>
+						<li class="list__list--item fragment">Page is served from cache, if it's been cached</li>
+						<li class="list__list--item fragment">If the page has not yet been cached, a custom offline content can be displayed</li>
+						<li class="list__list--item fragment">Can even be used to continue shopping if you're offline e.g. in Vue Storefront</li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title">PWA request flow</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img src="assets/pwa-diagram-03.png" alt="" height="480" class="centered__image">
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title" id="fragments">Feature overview</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">Fast and efficient</li>
+						<li class="list__list--item fragment">Behaves like a native (mobile) app</li>
+						<li class="list__list--item fragment">Supports offline features using a <strong>service worker</strong></li>
+						<li class="list__list--item fragment">Can be added to home screen thanks to a <strong>web app manifest</strong></li>
+						<li class="list__list--item fragment">Supports Push notifications</li>
+						<li class="list__list--item fragment">Doesn't require installation from user</li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title" id="fragments">Conclusion</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">A SPA can be a PWA, but a PWA does not have to be a SPA</li>
+						<li class="list__list--item fragment">Progressive Web Apps are the next level of browser based applications, because they:
+							<ul class="list__list">
+								<li class="list__list--item fragment">Offer rich user experience that parallels thos of native apps</li>
+								<li class="list__list--item fragment">Combine features from native apps with the benefits of browser based applications</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title" id="fragments">They are not the same, because...</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">PWAs need to register a service worker, including a fetch event handler and (minimal) offline support</li>
+						<li class="list__list--item fragment">PWAs need to have a valid Web Manifest file with a minimal set of icons</li>
+						<li class="list__list--item fragment">PWAs need to always be served via HTTPS</li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list">
+					<h1 class="list__title">Thanks for your attention!<br />Have a great weekend! 🍻️</h1>
+					<div class="list__text--wrapper" style="text-align: center;">
+						<img src="assets/weekend.webp" alt="" class="fragment" />
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
 			</div>
 		</div>
 

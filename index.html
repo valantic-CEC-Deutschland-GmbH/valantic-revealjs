@@ -75,7 +75,7 @@
 				<section class="list" id="fragments">
 					<h1 class="list__title">PWA? SPA?</h1>
 					<div class="list__text--wrapper" style="text-align: center;">
-						<img class="fragment" src="assets/questionmarks.webp" alt="" />
+						<img class="fragment" src="assets/questionmarks.webp" alt="" height="400"/>
 					</div>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
@@ -107,7 +107,7 @@
 					<ul class="list__list">
 						<li class="list__list--item fragment">JS loaded again on every request</li>
 						<li class="list__list--item fragment">Time to first byte occurs multiple times</li>
-						<li class="list__list--item fragment">Traditional routing (Backend based, direct links to files)</li>
+						<li class="list__list--item fragment">Traditional routing (Backend based, direct links to files, etc.)</li>
 						<li class="list__list--item fragment">New pages are loaded completely on each request</li>
 						<li class="list__list--item fragment">Whole website is reloading</li>
 					</ul>
@@ -147,6 +147,20 @@
 					<div class="list__text--wrapper" style="text-align: center;">
 						<img src="assets/diff.gif" alt="" class="fragment" />
 					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="list" id="fragments">
+					<h1 class="list__title">Main differences</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">PWA is mobile first</li>
+						<li class="list__list--item fragment">It's designed to behave like a native app</li>
+						<li class="list__list--item fragment">It includes a <strong>Web App Manifest</strong></li>
+						<li class="list__list--item fragment">It includes a <strong>Service Worker</strong></li>
+						<li class="list__list--item fragment">It requires HTTPS</li>
+					</ul>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
 						<img src="assets/nexus-united.png" alt="nexus united"/>
@@ -232,7 +246,7 @@ self.addEventListener('install', event => {
 					<ul class="list__list">
 						<li class="list__list--item fragment">Service Worker is between app and network</li>
 						<li class="list__list--item fragment">URL is cached on visit if not excluded</li>
-						<li class="list__list--item fragment">URL is served throug the app</li>
+						<li class="list__list--item fragment">URL is served through the app</li>
 					</ul>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
@@ -265,7 +279,7 @@ self.addEventListener('install', event => {
 						<li class="list__list--item fragment">Service Worker checks for cached pages</li>
 						<li class="list__list--item fragment">Page is served from cache, if it's been cached</li>
 						<li class="list__list--item fragment">If the page has not yet been cached, a custom offline content can be displayed</li>
-						<li class="list__list--item fragment">Can even be used to continue shopping if you're offline e.g. in Vue Storefront</li>
+						<li class="list__list--item fragment">Can even be used to continue shopping if you're offline e.g. in Vue Storefront thanks to <strong>background synchronization</strong></li>
 					</ul>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">

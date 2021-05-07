@@ -1,199 +1,245 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+	<title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/nexus.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/nexus.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section class="panorama" data-background="assets/backgrounds/mountains01.jpg">
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-                    <div class="nxs__title-wrapper">
-					    <h1 class="nxs__title">Lorem ipsum dolor</h1>
-                    </div>
-				</section>
-				<section class="agenda">
-					<h1 class="agenda__title">Agenda</h1>
-					<div class="agenda__image--wrapper">
-						<img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-					</div>
-					<div class="agenda__text--wrapper">
-						<div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-						<ol class="agenda__list">
-							<li>Die erste Zeile</li>
-							<li>Die zweite Zeile</li>
-							<li>Noch eine Zeile</li>
-							<li>Und das auch noch</li>
-						</ol>
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-                <section class="agenda">
-                    <h1 class="agenda__title">Agenda</h1>
-                    <div class="agenda__image--wrapper">
-                        <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-                    </div>
-                    <div class="agenda__text--wrapper">
-                        <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-                        <ol class="agenda__list">
-                            <li>Die erste Zeile</li>
-                            <li>Die zweite Zeile</li>
-                            <li>Noch eine Zeile</li>
-                            <li>Und das auch noch</li>
-                        </ol>
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
-				<section class="code">
-					<h1 class="code__title">Hier kommt die Überschrift hin</h1>
-					<div class="code__text--wrapper">
-						<div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-					</div>
-					<div class="code__snippet--wrapper">
-                        <pre>
-                            <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-  // some code
-}
-</code></pre>
-
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-                <section class="code full-width">
-                    <h1 class="code__title">Full-Width</h1>
-                    <div>
-                        <pre>
-<code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-  protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-  {
-    $routeConfigCustomizer
-      ->customize(function (RouteConfig $config, RouteInfo $info) {
-          if ($info->getRouteName()[0] === '_') {
-              $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-          }
-      })
-      ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-          $config->changeDefaultRequestDataSet('Log in as "user".')
-                 ->setAuth(new BasicHttpAuth('user', 'userpass'));
-      });
-  }
-}
-</code>
-                        </pre>
-
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
-				<section class="list">
-					<h1 class="list__title">Eine Listenseite</h1>
-					<div class="list__text--wrapper">
-						<div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<ul class="list__list">
-						<li class="list__list--item">Die erste Zeile</li>
-						<li class="list__list--item">Die nächste Zeile</li>
-						<li class="list__list--item">Noch eine Zeile</li>
-						<li class="list__list--item">Und das auch noch</li>
-					</ul>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered is--panorama" data-background-image="assets/backgrounds/mountains01.jpg">
-
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered">
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section class="panorama" data-background="assets/backgrounds/mountains01.jpg">
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
 			</div>
-		</div>
+			<div class="nxs__title-wrapper">
+				<h1 class="nxs__title" style="">Vue Storefront</h1>
+			</div>
+		</section>
+		<section class="list">
+			<div class="list__text--wrapper" style="text-align: center;">
+				<div style="font-family: 'Permanent Marker', cursive;transform: rotate(-20deg);font-size: 100px;line-height: 50px;position: relative; top: 160px">
+					<span style="color: #0D3349;">A</span><br />
+					<span style="color: #C7D227;">>>short<<</span><br />
+					<span style="color: #0D3349;">introduction</span>
+				</div>
+			</div>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="agenda" id="fragments">
+			<h1 class="agenda__title">Agenda</h1>
+			<div class="agenda__image--wrapper">
+				<div style="font-family: 'Permanent Marker', cursive;transform: rotate(-20deg);font-size: 80px;line-height: 40px;position: relative;top: -60px;">
+					<span style="color: #0D3349;">Vue</span><br />
+					<span style="color: #C7D227;">Storefront</span>
+				</div>
+			</div>
+			<div class="agenda__text--wrapper">
+				<ol class="agenda__list">
+					<li class="fragment">Introduction</li>
+					<li class="fragment">Key Features</li>
+					<li class="fragment">Architecture Example</li>
+					<li class="fragment">Available Integrations</li>
+					<li class="fragment">Example Impediments with Shopware PWA</li>
+					<li class="fragment">Conclusion</li>
+				</ol>
+			</div>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title">Key Features</h1>
+			<ul class="list__list">
+				<li class="list__list--item fragment">Platform agnostic</li>
+				<li class="list__list--item fragment">Focus on performance</li>
+				<li class="list__list--item fragment">Mobile first</li>
+				<li class="list__list--item fragment"><strong>Theoretically</strong> unlimited theming/customization</li>
+				<li class="list__list--item fragment">Out of the box SSR</li>
+				<li class="list__list--item fragment">Offline mode</li>
+				<li class="list__list--item fragment">Offers PWA functionalities</li>
+			</ul>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title">Architecture (VSF 1.0)</h1>
+			<div class="list__text--wrapper" style="text-align: center;">
+				<img class="fragment" src="assets/vsf-architecture-old.png" alt="" height="450"/>
+			</div>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title">Architecture (VSF Next)</h1>
+			<div class="list__text--wrapper" style="text-align: center;">
+				<img class="fragment" src="assets/vsf-architecture.png" alt="" height="350"/>
+			</div>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title">Available Ecommerce Integrations</h1>
+			<ul class="list__list">
+				<li class="list__list--item fragment">Magento 2</li>
+				<li class="list__list--item fragment">Commercetools</li>
+				<li class="list__list--item fragment">Shopware</li>
+				<li class="list__list--item fragment">Spryker</li>
+				<li class="list__list--item fragment">Shopify</li>
+				<li class="list__list--item fragment">Salesforce</li>
+				<li class="list__list--item fragment">About you Cloud</li>
+				<li class="list__list--item fragment">And more..</li>
 
-		<script src="js/reveal.js"></script>
+			</ul>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title">External CMS Systems like</h1>
+			<ul class="list__list">
+				<li class="list__list--item fragment">Storyblok</li>
+				<li class="list__list--item fragment">Contentstack</li>
+				<li class="list__list--item fragment">Amplience</li>
+				<li class="list__list--item fragment">Contentful</li>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
+			</ul>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title">Sounds too good to be true?<br />Right. There still is shopware..️</h1>
+			<div class="list__text--wrapper fragment" style="text-align: center;">
+				<img src="assets/doofy.gif" height="400" alt="" />
+			</div>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title">Example: Impediments with Shopware PWA</h1>
+			<ul class="list__list">
+				<li class="list__list--item fragment">Ui library is outdated/can't be updated easily</li>
+				<li class="list__list--item fragment">Some default functionalities are missing</li>
+				<li class="list__list--item fragment">Some internal commands needed to be fixed locally</li>
+				<li class="list__list--item fragment">Overall "beta" status of application</li>
+				<li class="list__list--item fragment">Some core modules can't be easily modified</li>
+				<li class="list__list--item fragment">Implementation at points clearly shows shopware involvement</li>
+				<li class="list__list--item fragment">Documentation lacking essential information</li>
+			</ul>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title fragment">Any questions?</h1>
+			<div class="list__text--wrapper fragment" style="text-align: center;">
+				<img src="assets/thumbsup.gif" height="400" alt="" />
+			</div>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list" id="fragments">
+			<h1 class="list__title">One more thing..</h1>
+			<div class="list__text--wrapper fragment">
+				<p>To give a deeper insight into the workings of Vue Storefront we'll work on a Spryker POC in the next weeks/months. Stay tuned!</p>
+			</div>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list">
+			<h1 class="list__title" id="fragments">Conclusion</h1>
+			<ul class="list__list">
+				<li class="list__list--item fragment">Big pool of integrations to choose from</li>
+				<li class="list__list--item fragment">PWA features out of the box</li>
+				<li class="list__list--item fragment">Ability to easily integrate additional APIs into Storefront API</li>
+				<li class="list__list--item fragment">Open Source</li>
+				<li class="list__list--item fragment">Shopware PWA: Rocky start in project</li>
+				<li class="list__list--item fragment">Shopware PWA: At times lacking clear documentation</li>
+			</ul>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+		<section class="list">
+			<h1 class="list__title">Thanks for your attention!<br />Have a great weekend! 🍻️</h1>
+			<div class="list__text--wrapper" style="text-align: center;">
+				<img src="assets/friday.gif" height="400" alt="" />
+			</div>
+			<div class="nxs__logo--background"></div>
+			<div class="nxs__logo">
+				<img src="assets/nexus-united.png" alt="nexus united"/>
+			</div>
+		</section>
+	</div>
+</div>
 
-            Reveal.addEventListener( 'slidechanged', function( event ) {
-                let slideClass = Reveal.getCurrentSlide().className;
+<script src="js/reveal.js"></script>
 
-                function codeSlideFullWidth(className) {
-                    if (slideClass.includes(className)) {
-                        Reveal.configure({width: "100%"});
-                    } else {
-                        Reveal.configure({width: 960});
-                    }
-                }
-                codeSlideFullWidth("full-width");
-            } );
-		</script>
-	</body>
+<script>
+	// More info about config & dependencies:
+	// - https://github.com/hakimel/reveal.js#configuration
+	// - https://github.com/hakimel/reveal.js#dependencies
+	Reveal.initialize({
+		dependencies: [
+			{ src: 'plugin/markdown/marked.js' },
+			{ src: 'plugin/markdown/markdown.js' },
+			{ src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/highlight/highlight.js', async: true }
+		]
+	});
+
+	Reveal.addEventListener( 'slidechanged', function( event ) {
+		let slideClass = Reveal.getCurrentSlide().className;
+
+		function codeSlideFullWidth(className) {
+			if (slideClass.includes(className)) {
+				Reveal.configure({width: "100%"});
+			} else {
+				Reveal.configure({width: 960});
+			}
+		}
+		codeSlideFullWidth("full-width");
+	} );
+</script>
+</body>
 </html>

@@ -30,58 +30,396 @@
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
                     <div class="nxs__title-wrapper">
-					    <h1 class="nxs__title">Lorem ipsum dolor</h1>
+					    <h1 class="nxs__title">Captainhook</h1>
+						<h4>enforcing good commit messages & more</h4>
                     </div>
 				</section>
-				<section class="agenda">
-					<h1 class="agenda__title">Agenda</h1>
-					<div class="agenda__image--wrapper">
-						<img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-					</div>
-					<div class="agenda__text--wrapper">
-						<div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-						<ol class="agenda__list">
-							<li>Die erste Zeile</li>
-							<li>Die zweite Zeile</li>
-							<li>Noch eine Zeile</li>
-							<li>Und das auch noch</li>
-						</ol>
-					</div>
+				<section class="list">
+					<h1 class="list__title">Agenda</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">What are git hooks?</li>
+						<li class="list__list--item fragment">Example "native" git hook</li>
+						<li class="list__list--item fragment">Why are good commit messages important?</li>
+						<li class="list__list--item fragment">Captain🪝 - to the rescue!</li>
+						<li class="list__list--item fragment">Conclusion</li>
+					</ul>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
 				</section>
-                <section class="agenda">
-                    <h1 class="agenda__title">Agenda</h1>
-                    <div class="agenda__image--wrapper">
-                        <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-                    </div>
-                    <div class="agenda__text--wrapper">
-                        <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-                        <ol class="agenda__list">
-                            <li>Die erste Zeile</li>
-                            <li>Die zweite Zeile</li>
-                            <li>Noch eine Zeile</li>
-                            <li>Und das auch noch</li>
-                        </ol>
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
+				<section class="centered">
+					<h1 class="centered__title">What are git hooks?</h1>
+					<div class="centered__text--wrapper">
+						<div class="centered__text fragment">Git hooks are basically just shell scripts, which can be bound to specific git commands</div>
+					</div>
+					<div class="centered__image--wrapper">
+						<img src="assets/img/default-hooks.png" alt="" class="centered__image fragment">
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Example hooks are already within your project, because they are added on each git init</li>
+							<li>Captainhook has more hooks in total, because it combines some parts of the native hooks into own ones</li>
+							<li>You could execute a specific tool, build or tests if a git command has been used</li>
+							<li>one possible way to reduce the load on the build servers, because it first has to run locally</li>
+							<li>These hooks are not versioned - more on that later</li>
+							<li>Git hooks can also be added on the server side, but in this talk we'll focus on client side hooks</li>
+						</ul>
+					</aside>
+				</section>
 				<section class="code">
-					<h1 class="code__title">Hier kommt die Überschrift hin</h1>
-					<div class="code__text--wrapper">
-						<div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
+					<h1 class="code__title">Example pre-push hook</h1>
+<!--					<div class="code__text&#45;&#45;wrapper">-->
+<!--						<div class="code__text"><code class="hl-js shell">git push orign/NXSFRY-60</code> </div>-->
+<!--					</div>-->
+					<div class="code__snippet--wrapper">
+                        <pre>
+                            <code class="hljs bash fragment">git push orign/NXSFR-69-captainhook-presentation</code>
+						</pre>
 					</div>
 					<div class="code__snippet--wrapper">
                         <pre>
-                            <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
+                            <code class="hljs php fragment">#!/bin/zsh
+#.git/hooks/pre-push
+
+php ../../vendor/bin/phpunit
+
+</code></pre>
+
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Nice</li>
+							<li>In this example we want to push our recent changes to the origin</li>
+							<li>but this time we are a lazy developer and dont check if all tests are green beforehand</li>
+							<li>we have a pipeline for that, right?</li>
+							<li>before the push will be executed, git will run our pre-push script</li>
+							<li>these could also be a code style check, static analysis tools or</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="centered">
+					<h1 class="centered__title">Why are good commit messages important?</h1>
+					<div class="centered__image--wrapper" style="height: 170px">
+						<img src="assets/img/angry.gif" alt="" class="centered__image fragment">
+					</div>
+					<div class="centered__text--wrapper">
+						<div class="centered__text fragment">Fix stuff</div>
+						<div class="centered__text fragment">Was made by yourself</div>
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>I think that everyone who had to solve a bug on a unknown or even known project looked once like that</li>
+							<li>you try to determine WTF has the developer done here</li>
+							<li>so you look into the git history just to find out, that it was you and the commit message was "fix"</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="centered">
+					<h1 class="centered__title">What are good commit messages?</h1>
+					<div class="centered__image--wrapper">
+						<img src="assets/img/tldr.gif" alt="" class="centered__image fragment">
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Its possible to add a whole talk just centered about good commit messages, so here are my quick tips</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="list">
+					<h1 class="list__title">What are good commit messages?</h1>
+					<ul class="list__list">
+						<li class="list__list--item fragment">Include your JIRA Ticket Number!</li>
+						<li class="list__list--item fragment">Write Short, Detailed Commit Messages</li>
+						<li class="list__list--item fragment">What changed from the last version?</li>
+						<li class="list__list--item fragment">How did it resolve the issue?</li>
+						<li class="list__list--item fragment">Why did you make the change?</li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>at nexus its even required to include the ticket number - but it is not enforced consistently</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="centered">
+					<h1 class="centered__title">CaptainHook 5 💪</h1>
+					<div class="centered__image--wrapper">
+						<img src="assets/img/cptn-hook.png" alt="" class="centered__image fragment">
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Captainhook is a git hook manager and git hook extender</li>
+							<li>with this tool its possible to easily manage hooks</li>
+							<li>ensure that they are installed on every developer machine</li>
+							<li>and even write hook logic in php instead of greasy bash scripts</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="code">
+					<h1 class="code__title">How to install CaptainHook?</h1>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs json">{
+  "require-dev": {
+    "captainhook/plugin-composer": "^5.0"
+  }
+}
+</code></pre>
+
+					</div>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs json" style="font-size: 20px;">{
+  "scripts": {
+    "post-autoload-dump": "vendor/bin/captainhook install -f -s"
+  }
+}
+</code></pre>
+
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>First add the dependency to your composer json trough require dev</li>
+							<li>add this command under this scipts tag to ensure, that the hooks will be installed, after composer install with dump autoload</li>
+							<li>can also be installed as PHAR</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="code">
+					<h1 class="code__title">CaptainHook configuration</h1>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs bash">vendor/bin/captainhook configure
+</code></pre>
+
+					</div>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs json" style="font-size: 16px; padding: 0em;">{
+  "pre-commit": {
+    "enabled": true,
+    "actions": [
+      {
+        "action": "phpunit"
+      },
+      {
+        "action": "phpcs --standard=psr2 src"
+      }
+    ]
+  },
+  "pre-push": {
+    "enabled": false,
+    "action": "tools/phpunit.phar --configuration=phpunit.git.xml"
+  }
+}
+</code></pre>
+
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>captainhook.json will be created</li>
+							<li>everything can be done here in this file</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="code">
+					<h1 class="code__title">CaptainHook Placeholders</h1>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs json" style="font-size: 19px">{
+  "pre-commit": {
+    "enabled": true,
+    "actions": [
+      {
+        "action": "tools/phpcs.phar --standard=psr12 {$STAGED_FILES|of-type:php}"
+      }
+    ]
+  }
+}
+</code></pre>
+
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>captainhook.json will be created</li>
+							<li>everything can be done here in this file</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="centered">
+					<h1 class="centered__title">Placeholders & Variables</h1>
+					<div class="centered__image--wrapper">
+						<img src="assets/img/variables.png" alt="" class="centered__image fragment">
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Captainhook comes with different placeholders right out of the box</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="code">
+					<h1 class="code__title">Conditional 🪝</h1>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs json" style="font-size: 16px; padding: 0em;">{
+  "post-change": {
+    "enabled": true,
+    "actions": [
+      {
+        "action": "composer install",
+        "options": {},
+        "conditions": [
+          {
+            "exec": "\\CaptainHook\\App\\Hook\\Condition\\FileChanged\\Any",
+            "args": [
+              ["composer.json", "composer.lock"]
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>runs composer install when composer files changes</li>
+							<li>post change is a virtual hook</li>
+							<li>will get triggered by post-checkout, post-merge, post-rewrite git hooks</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section class="code">
+					<h1 class="code__title">Creating a custom 🪝</h1>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs json" style="font-size: 16px; padding: 0em;">"commit-msg": {
+  "enabled": true,
+  "actions": [
+    {
+      "action": "\\MyName\\GitHook\\NoEmptyCommitMessages",
+      "options": []
+    }
+  ]
+}
+</code></pre>
+
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>We don't want that the developers can submit commits without any content</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="code">
+					<h1 class="code__title">CaptainHook configuration</h1>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs php" style="font-size: 16px; padding: 0em;">
+class NoEmptyCommitMessages implements HookAction
 {
-  // some code
+    public function execute(Config $config, IO $io, Repo $repository, Action $action) : void
+    {
+        $message = $repository->getCommitMsg();
+        if (empty($message->getContent())) {
+            throw new \Exception('Empty commit message is not allowed');
+        }
+    }
+}
+</code></pre>
+
+					</div>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>within the repository variable we can get the commit message</li>
+						</ul>
+					</aside>
+				</section>
+
+
+				<section class="list">
+					<h1 class="list__title">Conclusion</h1>
+					<div class="list__text--wrapper">
+						<div class="list__text fragment">Some things to keep in mind!</div>
+					</div>
+					<ul class="list__list">
+						<li class="list__list--item fragment">"native" git hooks are not versioned in the git repository!</li>
+						<li class="list__list--item fragment">each developer can easily skip or remove local hooks!</li>
+						<li class="list__list--item fragment">git hooks should be used on the server-side, if local git hooks are omitted by the developers</li>
+						<li class="list__list--item fragment">sync your git directory into the container, if you are using docker!</li>
+					</ul>
+					<div class="nxs__logo--background"></div>
+					<div class="nxs__logo">
+						<img src="assets/nexus-united.png" alt="nexus united"/>
+					</div>
+				</section>
+				<section class="code">
+					<h1 class="code__title">CaptainHook with docker</h1>
+					<div class="code__snippet--wrapper fragment fade-in-then-semi-out">
+                        <pre>
+                            <code class="hljs json" style="font-size: 16px; padding: 0em;">{
+  "config": {
+    "run-mode": "docker",
+    "run-exec": "docker exec CONTAINER_NAME"
+  }
+  "pre-commit": {
+    ...
+  }
 }
 </code></pre>
 
@@ -91,79 +429,19 @@ class SmokeTest extends HttpSmokeTestCase
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
 				</section>
-                <section class="code full-width">
-                    <h1 class="code__title">Full-Width</h1>
-                    <div>
-                        <pre>
-<code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-  protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-  {
-    $routeConfigCustomizer
-      ->customize(function (RouteConfig $config, RouteInfo $info) {
-          if ($info->getRouteName()[0] === '_') {
-              $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-          }
-      })
-      ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-          $config->changeDefaultRequestDataSet('Log in as "user".')
-                 ->setAuth(new BasicHttpAuth('user', 'userpass'));
-      });
-  }
-}
-</code>
-                        </pre>
-
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
-				<section class="list">
-					<h1 class="list__title">Eine Listenseite</h1>
-					<div class="list__text--wrapper">
-						<div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<ul class="list__list">
-						<li class="list__list--item">Die erste Zeile</li>
-						<li class="list__list--item">Die nächste Zeile</li>
-						<li class="list__list--item">Noch eine Zeile</li>
-						<li class="list__list--item">Und das auch noch</li>
-					</ul>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered is--panorama" data-background-image="assets/backgrounds/mountains01.jpg">
-
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
 				<section class="centered">
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
+					<h1 class="centered__title">Thank you for participating!</h1>
 					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
+						<div class="centered__text">Any questions?</div>
 					</div>
 					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
+						<img src="assets/img/questions.gif" alt="" class="centered__image">
 					</div>
 					<div class="nxs__logo--background"></div>
 					<div class="nxs__logo">
 						<img src="assets/nexus-united.png" alt="nexus united"/>
 					</div>
 				</section>
-
 			</div>
 		</div>
 

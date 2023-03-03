@@ -19,10 +19,10 @@ jobs:
                 shell: bash
                 run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
                 id: extract_branch
-            -   uses: dswistowski/surge-sh-action@v1
-            -   name: Deploy to {{ steps.extract_branch.outputs.branch }}.surge.sh
+            -   name: Deploy to Surge.sh
+                uses: dswistowski/surge-sh-action@v1
                 with:
-                    domain: { { steps.extract_branch.outputs.branch } }.surge.sh
-                    project: $GITHUB_WORKSPACE
-                    login: ${{ secrets.SURGE_LOGIN }}
-                    token: ${{ secrets.SURGE_TOKEN }}
+                  domain: { { steps.extract_branch.outputs.branch } }.surge.sh
+                  project: $GITHUB_WORKSPACE
+                  login: ${{ secrets.SURGE_LOGIN }}
+                  token: ${{ secrets.SURGE_TOKEN }}

@@ -4,7 +4,8 @@ on: [push]
 
 jobs:
     build:
-        environment: prod
+        environment:
+            SURGE_LOGIN: steven.zemelka@cec.valantic.com
         runs-on: ubuntu-latest
 
         steps:

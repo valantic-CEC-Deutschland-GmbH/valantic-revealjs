@@ -7,7 +7,7 @@ This repo contains Reveal.js boilerplate code in our corporate identity design.
 
 1. Create a new branch with a meaningful name
 2. Make your changes, replace the content of this readme with `README_TEMPLATE.md` & push it
-3. Your presentation will now be automatically deployed with [Surge.sh](https://surge.sh) onto the following URL `https://nxs-BRANCH-NAME.surge.sh`
+3. Your presentation will now be automatically deployed with [Surge.sh](https://surge.sh) onto the following URL `https://val-BRANCH-NAME.surge.sh`
 4. Alternatively you can get the URL from the [Github actions tab](https://github.com/nexusunited/nexusrevealjs/actions)
 
 ### Full setup

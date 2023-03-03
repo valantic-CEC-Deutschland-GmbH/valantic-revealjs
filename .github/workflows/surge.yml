@@ -1,10 +1,11 @@
 name: Deploy to surge.sh
 
-on: [ push ]
+on: [push]
 
 jobs:
     build:
         runs-on: ubuntu-latest
+        environment: prod
         steps:
             -   uses: actions/checkout@v1
             -   name: Setup node
@@ -19,10 +20,8 @@ jobs:
                 shell: bash
                 run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
                 id: extract_branch
-            -   name: Deploy to Surge.sh
-                uses: dswistowski/surge-sh-action@v1
-                with:
-                  domain: { { steps.extract_branch.outputs.branch } }.surge.sh
-                  project: $GITHUB_WORKSPACE
-                  login: ${{ secrets.SURGE_LOGIN }}
-                  token: ${{ secrets.SURGE_TOKEN }}
+            -   name: Deploy https://val-${{ steps.extract_branch.outputs.branch }}.surge.sh to surge.sh
+                env:
+                    SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+                    SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+                run: surge --project $GITHUB_WORKSPACE --domain https://val-${{ steps.extract_branch.outputs.branch }}.surge.sh

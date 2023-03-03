@@ -4,10 +4,10 @@ on: [push]
 
 jobs:
     build:
-        environment:
-            SURGE_LOGIN: steven.zemelka@cec.valantic.com
         runs-on: ubuntu-latest
-
+        environment:
+            name: prod
+            SURGE_LOGIN: steven.zemelka@cec.valantic.com
         steps:
             -   uses: actions/checkout@v1
             -   name: Setup node

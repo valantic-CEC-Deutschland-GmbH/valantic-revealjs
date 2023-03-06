@@ -25,6 +25,14 @@
   font-family: ValanticText;
   src: url(/assets/fonts/OpenSans-Regular.woff);
 }
+.hide-in-darkmode {
+  display: "block";
+}
+
+.show-in-darkmode {
+  display: "none";
+}
+
 .valantic-logo {
   bottom: 0;
   left: 50%;
@@ -38,7 +46,7 @@
 }
 
 .reveal .slides {
-  color: #2D3842;
+  color: #ffffff;
   padding-bottom: 40px;
 }
 .reveal .slides .nxs__logo {
@@ -106,7 +114,7 @@
   color: #ffffff;
 }
 .reveal .agenda__title {
-  color: #2D3842;
+  color: #ffffff;
   font-size: 56px;
   font-weight: 700;
   margin-left: 51%;
@@ -117,7 +125,7 @@
   padding-bottom: 30px;
 }
 .reveal .agenda__title::after {
-  background: #2D3842;
+  background: #ffffff;
   bottom: 0;
   content: " ";
   height: 3px;
@@ -148,7 +156,7 @@
   font-size: 30px;
 }
 .reveal .code__title {
-  color: #2D3842;
+  color: #E8EBEF;
   font-size: 56px;
   font-weight: 700;
   padding-top: 10px;
@@ -159,7 +167,7 @@
   width: 100%;
 }
 .reveal .code__title::after {
-  background: #2D3842;
+  background: #E8EBEF;
   bottom: 0;
   content: " ";
   height: 3px;
@@ -168,7 +176,7 @@
   width: 140px;
 }
 .reveal .code__text {
-  color: #2D3842;
+  color: #E8EBEF;
   font-size: 30px;
   padding: 30px 0;
   text-align: left;
@@ -178,12 +186,14 @@
   font-size: 1rem;
   line-height: 1.3rem;
   padding: 1.5rem;
+  background-color: #1A2025;
+  border: 10px solid white;
 }
 .reveal .list {
   text-align: left;
 }
 .reveal .list__title {
-  color: #2D3842;
+  color: #E8EBEF;
   font-size: 56px;
   font-weight: 700;
   padding-top: 10px;
@@ -194,7 +204,7 @@
   width: 100%;
 }
 .reveal .list__title::after {
-  background: #2D3842;
+  background: #E8EBEF;
   bottom: 0;
   content: " ";
   height: 3px;
@@ -203,7 +213,7 @@
   width: 140px;
 }
 .reveal .list__text {
-  color: #2D3842;
+  color: #E8EBEF;
   font-size: 30px;
   padding: 30px 0;
   text-align: left;
@@ -229,7 +239,7 @@
   text-align: center;
 }
 .reveal .centered__title {
-  color: #2D3842;
+  color: #E8EBEF;
   font-size: 56px;
   font-weight: 700;
   padding-top: 10px;
@@ -240,7 +250,7 @@
   width: 100%;
 }
 .reveal .centered__title::after {
-  background: #2D3842;
+  background: #E8EBEF;
   bottom: 0;
   content: " ";
   height: 3px;
@@ -250,7 +260,7 @@
   width: 140px;
 }
 .reveal .centered__text {
-  color: #2D3842;
+  color: #E8EBEF;
   font-size: 30px;
   padding: 30px 0;
   text-align: center;
@@ -290,7 +300,7 @@
   --r-background-color: #ffffff;
   --r-main-font: ValanticText;
   --r-main-font-size: 40px;
-  --r-main-color: #2D3842;
+  --r-main-color: #ffffff;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: ValanticHeading;

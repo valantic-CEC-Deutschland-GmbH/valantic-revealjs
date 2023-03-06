@@ -15,7 +15,7 @@
 // --- colors ---
 // select one of the four primary colors
 $primary: $primTangerine;
-// select the following from dark palett or white
+ // select the following from dark palett or white
 $mainColor: $white; 
 $mainColorLight: $dark5; 
 $headingColor: $dark0;
@@ -41,31 +41,31 @@ $headingTextTransform: uppercase;
 $altHeadingColor: $primary;
 
 // background
-$backgroundColor: $white;
+$backgroundColor: $primary;
 
 // links
-$linkColor: $primary;
+$linkColor: $dark3;
 $linkColorHover: lighten($linkColor, 20%);
 
 // selection
-$selectionBackgroundColor: $primary;
+$selectionBackgroundColor: $dark0;
 
-// toggle for darkmode
-$darkMode: false;
+// toggle for darkmode / logo toggle
+$darkMode: true;
     
-@mixin show($show: true) {
+@mixin show($show) {
     @if $show {
-        display: "block";
+        display: block;
     }@else{
-        display: "none";
+        display: none;
     }
 }
 
-@mixin hide($hide: true) {
+@mixin hide($hide) {
     @if $hide {
-        display: "none";
+        display: none;
     }@else{
-        display: "block";
+        display: block;
     }
 }
 

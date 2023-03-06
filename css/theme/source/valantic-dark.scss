@@ -15,10 +15,10 @@
 // --- colors ---
 // select one of the four primary colors
 $primary: $primTangerine;
-// select the following from dark palett or white
+ // select the following from dark palett or white
 $mainColor: $white; 
-$mainColorLight: $dark5; 
-$headingColor: $dark0;
+$mainColorLight: $dark6; 
+$headingColor: $white;
 
 // fonts
 @font-face {
@@ -41,7 +41,7 @@ $headingTextTransform: uppercase;
 $altHeadingColor: $primary;
 
 // background
-$backgroundColor: $white;
+$backgroundColor: $dark0;
 
 // links
 $linkColor: $primary;

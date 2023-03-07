@@ -1,0 +1,151 @@
+@use '../colors.scss' as colors;
+
+// injected variables
+$primary: colors.$primTangerine  !default;
+$textColor: colors.$dark0  !default;
+$textColorLight: colors.$dark2  !default;
+$invertedTextColor: colors.$white  !default;
+$headingColor: $textColor  !default;
+$darkMode: false !default;
+
+// ----- template section -----
+@use "./agenda.scss" with ($textColor: $textColor,
+    $textColorLight: $textColorLight,
+    $invertedTextColor: $invertedTextColor,
+    $darkMode: $darkMode,
+    $primary: $primary,
+    $headingColor: $headingColor);
+
+@use "./centered.scss" with ($textColor: $textColor,
+    $textColorLight: $textColorLight,
+    $invertedTextColor: $invertedTextColor,
+    $darkMode: $darkMode,
+    $primary: $primary,
+    $headingColor: $headingColor);
+
+
+@use "./code.scss" with ($textColor: $textColor,
+    $textColorLight: $textColorLight,
+    $invertedTextColor: $invertedTextColor,
+    $darkMode: $darkMode,
+    $primary: $primary,
+    $headingColor: $headingColor);
+
+@use "./list.scss" with ($textColor: $textColor,
+    $textColorLight: $textColorLight,
+    $invertedTextColor: $invertedTextColor,
+    $darkMode: $darkMode,
+    $primary: $primary,
+    $headingColor: $headingColor);
+
+@use "./panorama.scss" with ($textColor: $textColor,
+    $textColorLight: $textColorLight,
+    $invertedTextColor: $invertedTextColor,
+    $darkMode: $darkMode,
+    $primary: $primary,
+    $headingColor: $headingColor);
+// ----- end template section -----
+
+// overall darkmode toggle switch
+// controls the logo
+@mixin show($show: true) {
+    @if $show {
+        display: block;
+    }
+
+    @else {
+        display: none;
+    }
+}
+
+@mixin hide($hide: true) {
+    @if $hide {
+        display: none;
+    }
+
+    @else {
+        display: block;
+    }
+}
+
+.hide-in-darkmode {
+    @include hide($darkMode);
+}
+
+.show-in-darkmode {
+    @include show($darkMode);
+}
+
+// general styling options
+
+.valantic-logo {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 250px;
+}
+
+.valantic-logo img {
+    width: 100%;
+}
+
+.reveal {
+    .slides {
+        color: $textColor;
+        padding-bottom: 40px;
+
+        .nxs__logo {
+            border: none;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            width: 250px;
+            z-index: 10;
+
+            img {
+                background: none;
+                border: none;
+                box-shadow: none;
+                width: 100%;
+            }
+        }
+
+        .nxs__logo--background {
+            display: block;
+            content: ' ';
+            background: #0D3349;
+            width: 1000vw;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 120px;
+            z-index: 1;
+        }
+    }
+
+    section {
+        height: 100%;
+
+        img {
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+
+    .controls-arrow {
+        color: $invertedTextColor;
+    }
+}
+
+// special modifier
+// @include light-bg-text-color($dark0);
+// @include dark-bg-text-color($white);
+
+// please refere to colors.scss for allowed gradients
+// @mixin bodyBackground() {
+//     @include linear-gradient($primCoralRed, $primPaleYellow );
+// }

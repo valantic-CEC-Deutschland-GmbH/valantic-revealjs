@@ -1,25 +1,35 @@
 /**
- * Valantic Theme (white)
+ * Valantic Theme (dark)
  * ---
  * Author: Max Mönch
  */
 
- // load custom scss
+// load custom scss
+@use "../../colors" as colors;
 
-// Default mixins and settings -----------------
+// -----------------  define colors palette ----------------- 
+// select one of the four primary colors
+$primary: colors.$dark0;
+// select the following from dark palette or white
+$textColor: colors.$white;
+$textColorLight: colors.$dark5;
+$invertedTextColor: colors.$dark0;
+$headingColor: colors.$white;
+$backgroundColor_ : colors.$dark0; // global color will be overriden by @import, thus pass it in a temporary form
+$darkMode: true;
+
+@use "../../templates/index.scss" with ($textColor: $textColor,
+    $textColorLight: $textColorLight,
+    $invertedTextColor: $invertedTextColor,
+    $darkMode: $darkMode,
+    $primary: $primary,
+    $headingColor: $headingColor);
+
+// ----------------- load default mixins and settings -----------------
 @import "../template/mixins";
 @import "../template/settings";
-@import "../../colors";
-// ---------------------------------------------
 
-// --- colors ---
-// select one of the four primary colors
-$primary: $primTangerine;
- // select the following from dark palett or white
-$mainColor: $white; 
-$mainColorLight: $dark5; 
-$headingColor: $dark0;
-
+// -----------------  reveal.js override section ----------------- 
 // fonts
 @font-face {
     font-family: ValanticHeading;
@@ -34,371 +44,22 @@ $headingColor: $dark0;
 $mainFont: 'ValanticText';
 $headingFont: 'ValanticHeading';
 
-// headings: select from dark or primary colors
+// headings
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
-$altHeadingColor: $primary;
 
-// background
-$backgroundColor: $primary;
+// headings: select from dark or primary color palettes
+$altHeadingColor: colors.$dark0;
 
 // links
-$linkColor: $dark3;
+$linkColor: colors.$dark0;
 $linkColorHover: lighten($linkColor, 20%);
 
 // selection
-$selectionBackgroundColor: $dark0;
+$selectionBackgroundColor: colors.$dark0;
+$backgroundColor: colors.$primTangerine; 
 
-// toggle for darkmode / logo toggle
-$darkMode: true;
-    
-@mixin show($show) {
-    @if $show {
-        display: block;
-    }@else{
-        display: none;
-    }
-}
-
-@mixin hide($hide) {
-    @if $hide {
-        display: none;
-    }@else{
-        display: block;
-    }
-}
-
-.hide-in-darkmode {
-    @include hide($darkMode);
-}
-
-.show-in-darkmode {
-    @include show($darkMode);
-}
-
-// special modifier
-// @include light-bg-text-color($dark0);
-// @include dark-bg-text-color($white);
-
-// please refere to colors.scss for allowed gradients
-// @mixin bodyBackground() {
-//     @include linear-gradient($primCoralRed, $primPaleYellow );
-// }
-
-// custom slide styles
-.valantic-logo {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    width: 250px;
-}
-
-.valantic-logo img {
-    width: 100%;
-}
-
-// custom styling for template slides
-.reveal {
-    .slides {
-        color: $mainColor;
-        padding-bottom: 40px;
-
-        .nxs__logo {
-            border: none;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            position: absolute;
-            width: 250px;
-            z-index: 10;
-
-            img {
-                background: none;
-                border: none;
-                box-shadow: none;
-                width: 100%;
-            }
-        }
-
-        .nxs__logo--background {
-            display: block;
-            content: ' ';
-            background: #0D3349;
-            width: 1000vw;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 120px;
-            z-index: 1;
-        }
-    }
-
-    section {
-        height: 100%;
-
-        img {
-            background: none;
-            border: none;
-            box-shadow: none;
-        }
-    }
-
-    .panorama {
-        color: $white;
-        height: 100%;
-        position: relative;
-        width: 100%;
-
-        .nxs__logo {
-            img {
-                width: 100%;
-            }
-        }
-
-        h1 {
-            color: $white;
-        }
-
-        .nxs__title {
-            font-size: 80px;
-            text-transform: uppercase;
-            text-align: left;
-            font-weight: 900;
-
-            &-wrapper {
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-                text-transform: uppercase;
-                text-align: left;
-                position: absolute;
-            }
-        }
-    }
-
-    .controls-arrow {
-        color: $white;
-    }
-
-    .agenda {
-        &__title {
-            color: $mainColor;
-            font-size: 56px;
-            font-weight: 700;
-            margin-left: 51%;
-            position: relative;
-            text-align: left;
-            text-transform: none;
-            margin-bottom: 0;
-            padding-bottom: 30px;
-
-            &::after {
-                background: $mainColor;
-                bottom: 0;
-                content: ' ';
-                height: 3px;
-                left: 0;
-                position: absolute;
-                width: 140px;
-            }
-        }
-
-        &__image {
-            background: none;
-            border: none;
-            box-shadow: none;
-            width: 100%;
-
-            &--wrapper {
-                display: inline-block;
-                width: 49%;
-            }
-        }
-
-        &__text {
-            font-size: 36px;
-            padding: 30px 0;
-
-            &--wrapper {
-                display: inline-block;
-                text-align: left;
-                width: 49%;
-            }
-        }
-
-        &__list {
-            font-size: 30px;
-        }
-    }
-
-    .code {
-
-        &__title {
-            color: $mainColorLight;
-            font-size: 56px;
-            font-weight: 700;
-            padding-top: 10px;
-            padding-bottom: 20px;
-            text-align: left;
-            text-transform: none;
-            position: relative;
-            width: 100%;
-
-            &::after {
-                background: $mainColorLight;
-                bottom: 0;
-                content: ' ';
-                height: 3px;
-                left: 0;
-                position: absolute;
-                width: 140px;
-            }
-        }
-
-        &__text {
-            color: $mainColorLight;
-            font-size: 30px;
-            padding: 30px 0;
-            text-align: left;
-        }
-
-        code {
-            font-family: 'ValanticText';
-            font-size: 1.0rem;
-            line-height: 1.3rem;
-            padding: 1.5rem;
-            background-color: $dark0;
-            border: 10px solid white;
-        }
-    }
-
-    .list {
-        text-align: left;
-
-        &__title {
-            color: $mainColorLight;
-            font-size: 56px;
-            font-weight: 700;
-            padding-top: 10px;
-            padding-bottom: 20px;
-            text-align: left;
-            text-transform: none;
-            position: relative;
-            width: 100%;
-
-            &::after {
-                background: $mainColorLight;
-                bottom: 0;
-                content: ' ';
-                height: 3px;
-                left: 0;
-                position: absolute;
-                width: 140px;
-            }
-        }
-
-        &__text {
-            color: $mainColorLight;
-            font-size: 30px;
-            padding: 30px 0;
-            text-align: left;
-        }
-
-        &__list {
-            font-size: 40px;
-            list-style-type: none;
-            margin-left: 0;
-
-            &--item {
-                position: relative;
-                padding-left: 40px;
-
-                &::before {
-                    content: '•';
-                    font-size: 80px;
-                    color: $primary;
-                    position: absolute;
-                    left: 0;
-                    line-height: 50px;
-                }
-            }
-        }
-    }
-
-    .centered {
-        text-align: center;
-
-        &__title {
-            color: $mainColorLight;
-            font-size: 56px;
-            font-weight: 700;
-            padding-top: 10px;
-            padding-bottom: 20px;
-            text-align: center;
-            text-transform: none;
-            position: relative;
-            width: 100%;
-
-            &::after {
-                background: $mainColorLight;
-                bottom: 0;
-                content: ' ';
-                height: 3px;
-                left: 50%;
-                transform: translateX(-50%);
-                position: absolute;
-                width: 140px;
-            }
-        }
-
-        &__text {
-            color: $mainColorLight;
-            font-size: 30px;
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        &__image {
-            object-fit: contain;
-
-            &--wrapper {
-                background: none;
-                border: none;
-                box-shadow: none;
-                height: 300px;
-            }
-        }
-
-        &.is--panorama {
-            color: $white;
-
-
-            .centered__title {
-                color: $white;
-
-                &::after {
-                    background: $white;
-                }
-            }
-
-            .centered__text {
-                color: $white;
-
-                &--wrapper {
-                    z-index: 50;
-                }
-            }
-
-            .centered__image--wrapper {
-                z-index: 50;
-            }
-        }
-    }
-}
-
-// Theme template ------------------------------
+// theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------

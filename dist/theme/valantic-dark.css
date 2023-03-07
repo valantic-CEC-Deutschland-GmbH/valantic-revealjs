@@ -1,10 +1,5 @@
 @charset "UTF-8";
 /**
- * Valantic Theme (white)
- * ---
- * Author: Max Mönch
- */
-/**
  * valantic Color Palett
  * ---
  * Author: Max Mönch
@@ -17,20 +12,228 @@
 * Peach – Tangerine
 * Tangerine – Pale Yellow
 */
-@font-face {
-  font-family: ValanticHeading;
-  src: url(/assets/fonts/FontsFree-Net-Gilroy-ExtraBold.woff);
+.reveal .agenda__title {
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 700;
+  margin-left: 51%;
+  position: relative;
+  text-align: left;
+  text-transform: none;
+  margin-bottom: 0;
+  padding-bottom: 30px;
 }
-@font-face {
-  font-family: ValanticText;
-  src: url(/assets/fonts/OpenSans-Regular.woff);
+.reveal .agenda__title::after {
+  background: #ffffff;
+  bottom: 0;
+  content: " ";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 140px;
 }
+.reveal .agenda__image {
+  background: none;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+}
+.reveal .agenda__image--wrapper {
+  display: inline-block;
+  width: 49%;
+}
+.reveal .agenda__text {
+  font-size: 36px;
+  padding: 30px 0;
+}
+.reveal .agenda__text--wrapper {
+  display: inline-block;
+  text-align: left;
+  width: 49%;
+}
+.reveal .agenda__list {
+  font-size: 30px;
+}
+
+.reveal .centered {
+  text-align: center;
+}
+.reveal .centered__title {
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  text-transform: none;
+  position: relative;
+  width: 100%;
+}
+.reveal .centered__title::after {
+  background: #ffffff;
+  bottom: 0;
+  content: " ";
+  height: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 140px;
+}
+.reveal .centered__text {
+  color: #ffffff;
+  font-size: 30px;
+  padding: 30px 0;
+  text-align: center;
+}
+.reveal .centered__image {
+  object-fit: contain;
+}
+.reveal .centered__image--wrapper {
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 300px;
+}
+.reveal .centered.is--panorama {
+  color: #ffffff;
+}
+.reveal .centered.is--panorama .centered__title {
+  color: #ffffff;
+}
+.reveal .centered.is--panorama .centered__title::after {
+  background: #ffffff;
+}
+.reveal .centered.is--panorama .centered__text {
+  color: #ffffff;
+}
+.reveal .centered.is--panorama .centered__text--wrapper {
+  z-index: 50;
+}
+.reveal .centered.is--panorama .centered__image--wrapper {
+  z-index: 50;
+}
+
+.reveal .code__title {
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: left;
+  text-transform: none;
+  position: relative;
+  width: 100%;
+}
+.reveal .code__title::after {
+  background: #ffffff;
+  bottom: 0;
+  content: " ";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 140px;
+}
+.reveal .code__text {
+  color: #ffffff;
+  font-size: 30px;
+  padding: 30px 0;
+  text-align: left;
+}
+.reveal .code code {
+  font-family: "ValanticText";
+  font-size: 1rem;
+  line-height: 1.3rem;
+  padding: 1.5rem;
+  background-color: #1A2025;
+  border: 10px solid white;
+}
+
+.reveal .list {
+  text-align: left;
+}
+.reveal .list__title {
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: left;
+  text-transform: none;
+  position: relative;
+  width: 100%;
+}
+.reveal .list__title::after {
+  background: #ffffff;
+  bottom: 0;
+  content: " ";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 140px;
+}
+.reveal .list__text {
+  color: #ffffff;
+  font-size: 30px;
+  padding: 30px 0;
+  text-align: left;
+}
+.reveal .list__list {
+  font-size: 40px;
+  list-style-type: none;
+  margin-left: 0;
+}
+.reveal .list__list--item {
+  position: relative;
+  padding-left: 40px;
+}
+.reveal .list__list--item::before {
+  content: "•";
+  font-size: 80px;
+  color: #F99E49;
+  position: absolute;
+  left: 0;
+  line-height: 50px;
+}
+
+.reveal .panorama {
+  color: #ffffff;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.reveal .panorama .nxs__logo img {
+  width: 100%;
+}
+.reveal .panorama h1 {
+  color: #ffffff;
+}
+.reveal .panorama h1.light {
+  color: #1A2025;
+}
+.reveal .panorama h1.dark {
+  color: #ffffff;
+}
+.reveal .panorama .nxs__title {
+  font-size: 80px;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 900;
+}
+.reveal .panorama .nxs__title-wrapper {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  text-align: left;
+  position: absolute;
+}
+
 .hide-in-darkmode {
-  display: "block";
+  display: none;
 }
 
 .show-in-darkmode {
-  display: "none";
+  display: block;
 }
 
 .valantic-logo {
@@ -84,215 +287,23 @@
   border: none;
   box-shadow: none;
 }
-.reveal .panorama {
-  color: #ffffff;
-  height: 100%;
-  position: relative;
-  width: 100%;
-}
-.reveal .panorama .nxs__logo img {
-  width: 100%;
-}
-.reveal .panorama h1 {
-  color: #ffffff;
-}
-.reveal .panorama .nxs__title {
-  font-size: 80px;
-  text-transform: uppercase;
-  text-align: left;
-  font-weight: 900;
-}
-.reveal .panorama .nxs__title-wrapper {
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  text-transform: uppercase;
-  text-align: left;
-  position: absolute;
-}
 .reveal .controls-arrow {
   color: #ffffff;
 }
-.reveal .agenda__title {
-  color: #ffffff;
-  font-size: 56px;
-  font-weight: 700;
-  margin-left: 51%;
-  position: relative;
-  text-align: left;
-  text-transform: none;
-  margin-bottom: 0;
-  padding-bottom: 30px;
-}
-.reveal .agenda__title::after {
-  background: #ffffff;
-  bottom: 0;
-  content: " ";
-  height: 3px;
-  left: 0;
-  position: absolute;
-  width: 140px;
-}
-.reveal .agenda__image {
-  background: none;
-  border: none;
-  box-shadow: none;
-  width: 100%;
-}
-.reveal .agenda__image--wrapper {
-  display: inline-block;
-  width: 49%;
-}
-.reveal .agenda__text {
-  font-size: 36px;
-  padding: 30px 0;
-}
-.reveal .agenda__text--wrapper {
-  display: inline-block;
-  text-align: left;
-  width: 49%;
-}
-.reveal .agenda__list {
-  font-size: 30px;
-}
-.reveal .code__title {
-  color: #F6F8FC;
-  font-size: 56px;
-  font-weight: 700;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  text-align: left;
-  text-transform: none;
-  position: relative;
-  width: 100%;
-}
-.reveal .code__title::after {
-  background: #F6F8FC;
-  bottom: 0;
-  content: " ";
-  height: 3px;
-  left: 0;
-  position: absolute;
-  width: 140px;
-}
-.reveal .code__text {
-  color: #F6F8FC;
-  font-size: 30px;
-  padding: 30px 0;
-  text-align: left;
-}
-.reveal .code code {
-  font-family: "ValanticText";
-  font-size: 1rem;
-  line-height: 1.3rem;
-  padding: 1.5rem;
-  background-color: #1A2025;
-  border: 10px solid white;
-}
-.reveal .list {
-  text-align: left;
-}
-.reveal .list__title {
-  color: #F6F8FC;
-  font-size: 56px;
-  font-weight: 700;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  text-align: left;
-  text-transform: none;
-  position: relative;
-  width: 100%;
-}
-.reveal .list__title::after {
-  background: #F6F8FC;
-  bottom: 0;
-  content: " ";
-  height: 3px;
-  left: 0;
-  position: absolute;
-  width: 140px;
-}
-.reveal .list__text {
-  color: #F6F8FC;
-  font-size: 30px;
-  padding: 30px 0;
-  text-align: left;
-}
-.reveal .list__list {
-  font-size: 40px;
-  list-style-type: none;
-  margin-left: 0;
-}
-.reveal .list__list--item {
-  position: relative;
-  padding-left: 40px;
-}
-.reveal .list__list--item::before {
-  content: "•";
-  font-size: 80px;
-  color: #F99E49;
-  position: absolute;
-  left: 0;
-  line-height: 50px;
-}
-.reveal .centered {
-  text-align: center;
-}
-.reveal .centered__title {
-  color: #F6F8FC;
-  font-size: 56px;
-  font-weight: 700;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  text-align: center;
-  text-transform: none;
-  position: relative;
-  width: 100%;
-}
-.reveal .centered__title::after {
-  background: #F6F8FC;
-  bottom: 0;
-  content: " ";
-  height: 3px;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  width: 140px;
-}
-.reveal .centered__text {
-  color: #F6F8FC;
-  font-size: 30px;
-  padding: 30px 0;
-  text-align: center;
-}
-.reveal .centered__image {
-  object-fit: contain;
-}
-.reveal .centered__image--wrapper {
-  background: none;
-  border: none;
-  box-shadow: none;
-  height: 300px;
-}
-.reveal .centered.is--panorama {
-  color: #ffffff;
-}
-.reveal .centered.is--panorama .centered__title {
-  color: #ffffff;
-}
-.reveal .centered.is--panorama .centered__title::after {
-  background: #ffffff;
-}
-.reveal .centered.is--panorama .centered__text {
-  color: #ffffff;
-}
-.reveal .centered.is--panorama .centered__text--wrapper {
-  z-index: 50;
-}
-.reveal .centered.is--panorama .centered__image--wrapper {
-  z-index: 50;
-}
 
+/**
+ * Valantic Theme (dark)
+ * ---
+ * Author: Max Mönch
+ */
+@font-face {
+  font-family: ValanticHeading;
+  src: url(/assets/fonts/FontsFree-Net-Gilroy-ExtraBold.woff);
+}
+@font-face {
+  font-family: ValanticText;
+  src: url(/assets/fonts/OpenSans-Regular.woff);
+}
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -300,11 +311,11 @@
   --r-background-color: #1A2025;
   --r-main-font: ValanticText;
   --r-main-font-size: 40px;
-  --r-main-color: #ffffff;
+  --r-main-color: #eee;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: ValanticHeading;
-  --r-heading-color: #ffffff;
+  --r-heading-color: #eee;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;

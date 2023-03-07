@@ -1,0 +1,60 @@
+$primary: colors.$primTangerine  !default;
+$textColor: colors.$dark0  !default;
+$textColorLight: colors.$dark2  !default;
+$invertedTextColor: colors.$white  !default;
+$headingColor: $textColor  !default;
+$darkMode: false !default;
+
+.reveal {
+    .agenda {
+        &__title {
+            color: $headingColor;
+            font-size: 56px;
+            font-weight: 700;
+            margin-left: 51%;
+            position: relative;
+            text-align: left;
+            text-transform: none;
+            margin-bottom: 0;
+            padding-bottom: 30px;
+    
+            &::after {
+                background: $textColor;
+                bottom: 0;
+                content: ' ';
+                height: 3px;
+                left: 0;
+                position: absolute;
+                width: 140px;
+            }
+        }
+    
+        &__image {
+            background: none;
+            border: none;
+            box-shadow: none;
+            width: 100%;
+    
+            &--wrapper {
+                display: inline-block;
+                width: 49%;
+            }
+        }
+    
+        &__text {
+            font-size: 36px;
+            padding: 30px 0;
+    
+            &--wrapper {
+                display: inline-block;
+                text-align: left;
+                width: 49%;
+            }
+        }
+    
+        &__list {
+            font-size: 30px;
+        }
+    }
+}
+

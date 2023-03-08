@@ -61,10 +61,10 @@
                 <div class="code__snippet--wrapper">
                     <pre>
                         <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-                        class SmokeTest extends HttpSmokeTestCase
-                        {
-                            // some code
-                        }
+class SmokeTest extends HttpSmokeTestCase
+{
+    // some code
+}
                         </code>
                     </pre>
                 </div>
@@ -74,22 +74,22 @@
                 <div>
                     <pre>
                         <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-                        class SmokeTest extends HttpSmokeTestCase
-                        {
-                            protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-                                {
-                                $routeConfigCustomizer
-                                ->customize(function (RouteConfig $config, RouteInfo $info) {
-                                    if ($info->getRouteName()[0] === '_') {
-                                        $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-                                    }
-                                })
-                                ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-                                    $config->changeDefaultRequestDataSet('Log in as "user".')
-                                            ->setAuth(new BasicHttpAuth('user', 'userpass'));
-                                });
-                            }
-                        }
+class SmokeTest extends HttpSmokeTestCase
+{
+    protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
+        {
+        $routeConfigCustomizer
+        ->customize(function (RouteConfig $config, RouteInfo $info) {
+            if ($info->getRouteName()[0] === '_') {
+                $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
+            }
+        })
+        ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
+            $config->changeDefaultRequestDataSet('Log in as "user".')
+                    ->setAuth(new BasicHttpAuth('user', 'userpass'));
+        });
+    }
+}
                         </code>
                     </pre>
                 </div>

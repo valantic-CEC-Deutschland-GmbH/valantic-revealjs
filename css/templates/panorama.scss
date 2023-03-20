@@ -1,0 +1,51 @@
+@use '../colors.scss' as colors;
+
+$primary: colors.$primTangerine !default;
+$textColor: colors.$dark0 !default;
+$textColorLight: colors.$dark2 !default; 
+$invertedTextColor: colors.$white !default;
+$headingColor: $textColor !default;
+$darkMode: false !default;
+
+.reveal {
+    .panorama {
+        color: $textColor;
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        .nxs__logo {
+            img {
+                width: 100%;
+            }
+        }
+
+        h1 {
+            color: $textColor;
+        }
+
+        h1.light{
+            color: colors.$dark0;
+        }
+
+        h1.dark{
+            color: colors.$white;
+        }
+
+        .nxs__title {
+            font-size: 80px;
+            text-transform: uppercase;
+            text-align: left;
+            font-weight: 900;
+
+            &-wrapper {
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                text-transform: uppercase;
+                text-align: left;
+                position: absolute;
+            }
+        }
+    }
+}

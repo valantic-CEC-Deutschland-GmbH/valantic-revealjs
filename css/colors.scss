@@ -1,0 +1,57 @@
+/**
+ * valantic Color Palett
+ * ---
+ * Author: Max Mönch
+ * Last Updated: 06.03.2023
+ */
+
+// primaries - all are allowed
+$primCoralRed: #FF4B4B;
+$primPeach: #FF744F;
+$primTangerine: #F99E49;
+$primPaleYellow: #FFF685;
+
+/* 
+* allowed gradients
+* ---
+* Coral Red – Peach
+* Peach – Tangerine
+* Tangerine – Pale Yellow
+*/
+
+// text/background colors
+$white: #ffffff;
+
+// dont use it - use dark color palett instead
+$black: #000; 
+
+// dark color palett
+$dark0: #1A2025;
+$dark1: #2D3842;
+$dark2: #626B73;
+$dark3: #979DA3;
+$dark4: #DADDE1;
+$dark5: #E8EBEF;
+$dark6: #F6F8FC;
+
+
+// from old theme - for compatibility
+// TODO: remove
+$base03: #189b8c;
+$base03transparent: rgba(24, 155, 140, 0.5);
+$base02: #0F324B;
+$base01: #586e75;
+$base00: #657b83;
+$base0: #839496;
+$base1: #93a1a1;
+$base2: #eee8d5;
+$base3: #fdf6e3;
+$grey01: #4A4A4A;
+$yellow: #b58900;
+$orange: #EA6437;
+$red: #dc322f;
+$magenta: #d33682;
+$violet: #6c71c4;
+$blue: #073642;
+$cyan: #2aa198;
+$green: #C7D227;

@@ -1,199 +1,203 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en">
 
-		<title>reveal.js</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/nexus.css">
+    <title>Valantic CEC Deutschland</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section class="panorama" data-background="assets/backgrounds/mountains01.jpg">
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
+    <!-- Theme -->
+<!--     <link rel="stylesheet" href="dist/theme/valantic-simple.css">-->
+<!--     <link rel="stylesheet" href="dist/theme/valantic-dark.css">-->
+    <link rel="stylesheet" href="dist/theme/valantic-color.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+</head>
+
+<body>
+    <div class="reveal" style="background-image: url('assets/backgrounds/valantic-bg.png')">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section class="panorama" data-background="assets/backgrounds/valantic-bg.png">
+                <div>
+                    <div class="nxs__logo">
+                        <img src="assets/img/valantic-logo-white.png" alt="valantic logo" />
+                    </div>
                     <div class="nxs__title-wrapper">
-					    <h1 class="nxs__title">Lorem ipsum dolor</h1>
+                        <h1 class="nxs__title inverted">Lorem ipsum dolor</h1>
                     </div>
-				</section>
-				<section class="agenda">
-					<h1 class="agenda__title">Agenda</h1>
-					<div class="agenda__image--wrapper">
-						<img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-					</div>
-					<div class="agenda__text--wrapper">
-						<div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-						<ol class="agenda__list">
-							<li>Die erste Zeile</li>
-							<li>Die zweite Zeile</li>
-							<li>Noch eine Zeile</li>
-							<li>Und das auch noch</li>
-						</ol>
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-                <section class="agenda">
-                    <h1 class="agenda__title">Agenda</h1>
-                    <div class="agenda__image--wrapper">
-                        <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
+                </div>
+            </section>
+            <section class="agenda">
+                <h1 class="agenda__title">Agenda</h1>
+                <div class="agenda__image--wrapper">
+                    <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
+                </div>
+                <div class="agenda__text--wrapper">
+                    <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt
+                        werden.</div>
+                    <ol class="agenda__list">
+                        <li>Die erste Zeile</li>
+                        <li>Die zweite Zeile</li>
+                        <li>Noch eine Zeile</li>
+                        <li>Und das auch noch</li>
+                    </ol>
+                </div>
+            </section>
+            <section class="code">
+                <h1 class="code__title">Hier kommt die Überschrift hin</h1>
+                <div class="code__text--wrapper">
+                    <div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.
                     </div>
-                    <div class="agenda__text--wrapper">
-                        <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-                        <ol class="agenda__list">
-                            <li>Die erste Zeile</li>
-                            <li>Die zweite Zeile</li>
-                            <li>Noch eine Zeile</li>
-                            <li>Und das auch noch</li>
-                        </ol>
-                    </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
-                    </div>
-                </section>
-				<section class="code">
-					<h1 class="code__title">Hier kommt die Überschrift hin</h1>
-					<div class="code__text--wrapper">
-						<div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.</div>
-					</div>
-					<div class="code__snippet--wrapper">
-                        <pre>
-                            <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
+                </div>
+                <div class="code__snippet--wrapper">
+                    <pre>
+                        <code class="hljs php" data-trim data-line-numbers>// tests/AppBundle/Smoke/SmokeTest.php
 class SmokeTest extends HttpSmokeTestCase
 {
-  // some code
+    // some code
 }
-</code></pre>
+                        </code>
+                    </pre>
+                </div>
+            </section>
+            <section data-auto-animate>
+                <h2 class="code__title" data-id="code-title">With Animations</h2>
+                <pre data-id="code-animation">
+                    <code class="hljs javascript" data-trim data-line-numbers="|4,8-11|17|22-24">
+                        <script type="text/template">
+import React, { useState } from 'react';
 
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-                <section class="code full-width">
-                    <h1 class="code__title">Full-Width</h1>
-                    <div>
-                        <pre>
-<code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
+function Example() {
+const [count, setCount] = useState(0);
+
+return (
+    <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+            Click me
+        </button>
+    </div>
+    );
+}
+
+function SecondExample() {
+const [count, setCount] = useState(0);
+
+return (
+    <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+            Click me
+        </button>
+    </div>
+    );
+}
+                        </script>
+                    </code>
+                </pre>
+            </section>
+            <section class="code full-width">
+                <h1 class="code__title">Full-Width</h1>
+                <div>
+                    <pre>
+                        <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
 class SmokeTest extends HttpSmokeTestCase
 {
-  protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-  {
-    $routeConfigCustomizer
-      ->customize(function (RouteConfig $config, RouteInfo $info) {
-          if ($info->getRouteName()[0] === '_') {
-              $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-          }
-      })
-      ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-          $config->changeDefaultRequestDataSet('Log in as "user".')
-                 ->setAuth(new BasicHttpAuth('user', 'userpass'));
-      });
-  }
+    protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
+        {
+        $routeConfigCustomizer
+        ->customize(function (RouteConfig $config, RouteInfo $info) {
+            if ($info->getRouteName()[0] === '_') {
+                $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
+            }
+        })
+        ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
+            $config->changeDefaultRequestDataSet('Log in as "user".')
+                    ->setAuth(new BasicHttpAuth('user', 'userpass'));
+        });
+    }
 }
-</code>
-                        </pre>
-
+                        </code>
+                    </pre>
+                </div>
+            </section>
+            <section class="list">
+                <h1 class="list__title">Eine Listenseite</h1>
+                <div class="list__text--wrapper">
+                    <div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
                     </div>
-                    <div class="nxs__logo--background"></div>
-                    <div class="nxs__logo">
-                        <img src="assets/nexus-united.png" alt="nexus united"/>
+                </div>
+                <ul class="list__list">
+                    <li class="list__list--item">Die erste Zeile</li>
+                    <li class="list__list--item">Die nächste Zeile</li>
+                    <li class="list__list--item">Noch eine Zeile</li>
+                    <li class="list__list--item">Und das auch noch</li>
+                </ul>
+            </section>
+            <section class="centered is--panorama" data-background-image="assets/backgrounds/valantic-bg.png">
+                <h1 class="centered__title">Hier ist eine Überschrift</h1>
+                <div class="centered__text--wrapper">
+                    <div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
                     </div>
-                </section>
-				<section class="list">
-					<h1 class="list__title">Eine Listenseite</h1>
-					<div class="list__text--wrapper">
-						<div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<ul class="list__list">
-						<li class="list__list--item">Die erste Zeile</li>
-						<li class="list__list--item">Die nächste Zeile</li>
-						<li class="list__list--item">Noch eine Zeile</li>
-						<li class="list__list--item">Und das auch noch</li>
-					</ul>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered is--panorama" data-background-image="assets/backgrounds/mountains01.jpg">
+                </div>
+                <div class="centered__image--wrapper">
+                    <img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
+                </div>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Hier ist eine Überschrift</h1>
+                <div class="centered__text--wrapper">
+                    <div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
+                    </div>
+                </div>
+                <div class="centered__image--wrapper">
+                    <img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
+                </div>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Bilder Stack</h1>
+                <div class="r-stack">
+                    <img class="fragment fade-out" data-fragment-index="0" src="https://placekitten.com/450/300" width="450" height="300">
+                    <img class="fragment current-visible" data-fragment-index="0" src="https://placekitten.com/300/450" width="300" height="450">
+                    <img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
+                </div>
+            </section>
+        </div>
+        <div class="valantic-logo hide-in-darkmode">
+            <img src="/assets/img/valantic-logo-black.png" alt="valantic logo" />
+        </div>
+        <div class="valantic-logo show-in-darkmode">
+            <img src="/assets/img/valantic-logo-white.png" alt="valantic logo" />
+        </div>
+    </div>
 
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
-				<section class="centered">
-					<h1 class="centered__title">Hier ist eine Überschrift</h1>
-					<div class="centered__text--wrapper">
-						<div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-					</div>
-					<div class="centered__image--wrapper">
-						<img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-					</div>
-					<div class="nxs__logo--background"></div>
-					<div class="nxs__logo">
-						<img src="assets/nexus-united.png" alt="nexus united"/>
-					</div>
-				</section>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
 
-			</div>
-		</div>
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
 
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-
-            Reveal.addEventListener( 'slidechanged', function( event ) {
-                let slideClass = Reveal.getCurrentSlide().className;
-
-                function codeSlideFullWidth(className) {
-                    if (slideClass.includes(className)) {
-                        Reveal.configure({width: "100%"});
-                    } else {
-                        Reveal.configure({width: 960});
-                    }
-                }
-                codeSlideFullWidth("full-width");
-            } );
-		</script>
-	</body>
 </html>

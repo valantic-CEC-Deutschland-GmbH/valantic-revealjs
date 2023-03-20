@@ -3,20 +3,6 @@
 This repo contains Reveal.js boilerplate code in our corporate identity design.
 > Select a branch from the Github UI to view already created presentations.
 
-## How to use different templates
-
-Change the template by exchanging the css file.
-
-```html
-<link rel="stylesheet" href="dist/theme/<theme>.css">
-```
-
-The following themes follow the coperate identity guidelines:
-
-- valantic-simple
-- valantic-dark
-- valantic-color
-
 ### Workflow
 
 1. Create a new branch with a meaningful name
@@ -51,6 +37,20 @@ The following themes follow the coperate identity guidelines:
 1. Open <http://localhost:8000> to view your presentation
 
    You can change the port by using `npm start -- --port=8001`.
+
+### How to use different templates
+
+Change the template by exchanging the css file.
+
+```html
+<link rel="stylesheet" href="dist/theme/<theme>.css">
+```
+
+The following themes follow the coperate identity guidelines:
+
+- valantic-simple
+- valantic-dark
+- valantic-color
 
 
 ### Additions

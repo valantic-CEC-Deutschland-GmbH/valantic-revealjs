@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="dist/reveal.css">
 
     <!-- Theme -->
-    <!-- <link rel="stylesheet" href="dist/theme/valantic-simple.css"> -->
-    <!-- <link rel="stylesheet" href="dist/theme/valantic-dark.css"> -->
+<!--     <link rel="stylesheet" href="dist/theme/valantic-simple.css">-->
+<!--     <link rel="stylesheet" href="dist/theme/valantic-dark.css">-->
     <link rel="stylesheet" href="dist/theme/valantic-color.css">
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -22,11 +22,11 @@
 </head>
 
 <body>
-    <div class="reveal">
+    <div class="reveal" style="background-image: url('assets/backgrounds/valantic-bg.png')">
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
-            <section class="panorama" data-background="assets/backgrounds/mountains01.jpg">
+            <section class="panorama" data-background="assets/backgrounds/valantic-bg.png">
                 <div>
                     <div class="nxs__logo">
                         <img src="assets/img/valantic-logo-white.png" alt="valantic logo" />
@@ -60,7 +60,7 @@
                 </div>
                 <div class="code__snippet--wrapper">
                     <pre>
-                        <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
+                        <code class="hljs php" data-trim data-line-numbers>// tests/AppBundle/Smoke/SmokeTest.php
 class SmokeTest extends HttpSmokeTestCase
 {
     // some code
@@ -68,6 +68,42 @@ class SmokeTest extends HttpSmokeTestCase
                         </code>
                     </pre>
                 </div>
+            </section>
+            <section data-auto-animate>
+                <h2 class="code__title" data-id="code-title">With Animations</h2>
+                <pre data-id="code-animation">
+                    <code class="hljs javascript" data-trim data-line-numbers="|4,8-11|17|22-24">
+                        <script type="text/template">
+import React, { useState } from 'react';
+
+function Example() {
+const [count, setCount] = useState(0);
+
+return (
+    <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+            Click me
+        </button>
+    </div>
+    );
+}
+
+function SecondExample() {
+const [count, setCount] = useState(0);
+
+return (
+    <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+            Click me
+        </button>
+    </div>
+    );
+}
+                        </script>
+                    </code>
+                </pre>
             </section>
             <section class="code full-width">
                 <h1 class="code__title">Full-Width</h1>
@@ -108,7 +144,7 @@ class SmokeTest extends HttpSmokeTestCase
                     <li class="list__list--item">Und das auch noch</li>
                 </ul>
             </section>
-            <section class="centered is--panorama" data-background-image="assets/backgrounds/mountains01.jpg">
+            <section class="centered is--panorama" data-background-image="assets/backgrounds/valantic-bg.png">
                 <h1 class="centered__title">Hier ist eine Überschrift</h1>
                 <div class="centered__text--wrapper">
                     <div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
@@ -128,6 +164,14 @@ class SmokeTest extends HttpSmokeTestCase
                 </div>
                 <div class="centered__image--wrapper">
                     <img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
+                </div>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Bilder Stack</h1>
+                <div class="r-stack">
+                    <img class="fragment fade-out" data-fragment-index="0" src="https://placekitten.com/450/300" width="450" height="300">
+                    <img class="fragment current-visible" data-fragment-index="0" src="https://placekitten.com/300/450" width="300" height="450">
+                    <img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
                 </div>
             </section>
         </div>

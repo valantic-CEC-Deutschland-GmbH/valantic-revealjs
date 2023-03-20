@@ -1,0 +1,65 @@
+/**
+ * Valantic Theme (simple)
+ * ---
+ * Author: Max Mönch
+ */
+
+// load custom scss
+@use "../../colors" as colors;
+
+// -----------------  define colors palette ----------------- 
+// select one of the four primary colors
+$primary: colors.$primTangerine;
+// select the following from dark palette or white
+$textColor: colors.$dark0;
+$textColorLight: colors.$dark4;
+$invertedTextColor: colors.$white;
+$headingColor: colors.$dark0;
+$backgroundColor_ : colors.$white; // global color will be overriden by @import, thus pass it in a temporary form
+$darkMode: false;
+
+@use "../../templates/index.scss" with ($textColor: $textColor,
+    $textColorLight: $textColorLight,
+    $invertedTextColor: $invertedTextColor,
+    $darkMode: $darkMode,
+    $primary: $primary,
+    $headingColor: $headingColor);
+
+// ----------------- load default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+
+// -----------------  reveal.js override section ----------------- 
+// fonts
+@font-face {
+    font-family: ValanticHeading;
+    src: url(/assets/fonts/FontsFree-Net-Gilroy-ExtraBold.woff);
+}
+
+@font-face {
+    font-family: ValanticText;
+    src: url(/assets/fonts/OpenSans-Regular.woff);
+}
+
+$mainFont: 'ValanticText';
+$headingFont: 'ValanticHeading';
+
+// headings
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+
+// headings: select from dark or primary color palettes
+$altHeadingColor: $primary;
+
+// links
+$linkColor: $primary;
+$linkColorHover: lighten($linkColor, 20%);
+
+// selection
+$selectionBackgroundColor: $primary;
+$backgroundColor: $backgroundColor_; 
+
+// theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------

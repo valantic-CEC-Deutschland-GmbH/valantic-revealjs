@@ -27,151 +27,334 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section class="panorama" data-background="assets/backgrounds/valantic-bg.png">
-                <div>
                     <div class="nxs__logo">
                         <img src="assets/img/valantic-logo-white.png" alt="valantic logo" />
                     </div>
                     <div class="nxs__title-wrapper">
-                        <h1 class="nxs__title inverted">Lorem ipsum dolor</h1>
+                        <h1 class="code__title">Chat-GPT</h1>
+                        <h5></h5>
+                        <div class="code__text">a Guide to Prompts</div>
                     </div>
-                </div>
-            </section>
-            <section class="agenda">
-                <h1 class="agenda__title">Agenda</h1>
-                <div class="agenda__image--wrapper">
-                    <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
-                </div>
-                <div class="agenda__text--wrapper">
-                    <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt
-                        werden.</div>
-                    <ol class="agenda__list">
-                        <li>Die erste Zeile</li>
-                        <li>Die zweite Zeile</li>
-                        <li>Noch eine Zeile</li>
-                        <li>Und das auch noch</li>
-                    </ol>
-                </div>
-            </section>
-            <section class="code">
-                <h1 class="code__title">Hier kommt die Überschrift hin</h1>
-                <div class="code__text--wrapper">
-                    <div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.
-                    </div>
-                </div>
-                <div class="code__snippet--wrapper">
-                    <pre>
-                        <code class="hljs php" data-trim data-line-numbers>// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-    // some code
-}
-                        </code>
-                    </pre>
-                </div>
-            </section>
-            <section data-auto-animate>
-                <h2 class="code__title" data-id="code-title">With Animations</h2>
-                <pre data-id="code-animation">
-                    <code class="hljs javascript" data-trim data-line-numbers="|4,8-11|17|22-24">
-                        <script type="text/template">
-import React, { useState } from 'react';
-
-function Example() {
-const [count, setCount] = useState(0);
-
-return (
-    <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-            Click me
-        </button>
-    </div>
-    );
-}
-
-function SecondExample() {
-const [count, setCount] = useState(0);
-
-return (
-    <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-            Click me
-        </button>
-    </div>
-    );
-}
-                        </script>
-                    </code>
-                </pre>
-            </section>
-            <section class="code full-width">
-                <h1 class="code__title">Full-Width</h1>
-                <div>
-                    <pre>
-                        <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-    protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-        {
-        $routeConfigCustomizer
-        ->customize(function (RouteConfig $config, RouteInfo $info) {
-            if ($info->getRouteName()[0] === '_') {
-                $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-            }
-        })
-        ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-            $config->changeDefaultRequestDataSet('Log in as "user".')
-                    ->setAuth(new BasicHttpAuth('user', 'userpass'));
-        });
-    }
-}
-                        </code>
-                    </pre>
-                </div>
+                <img src="assets/img/ChatGPT-Logo.png" alt="" style="left: 30%; position: absolute; top: 5%;">
             </section>
             <section class="list">
-                <h1 class="list__title">Eine Listenseite</h1>
-                <div class="list__text--wrapper">
-                    <div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
-                    </div>
-                </div>
+                <h1 class="list__title">Agenda</h1>
                 <ul class="list__list">
-                    <li class="list__list--item">Die erste Zeile</li>
-                    <li class="list__list--item">Die nächste Zeile</li>
-                    <li class="list__list--item">Noch eine Zeile</li>
-                    <li class="list__list--item">Und das auch noch</li>
+                    <li class="list__list--item fragment">Intro & Honorable mentions</li>
+                    <li class="list__list--item fragment">What is ChatGPT?</li>
+                    <li class="list__list--item fragment">The Importance of clear Instructions</li>
+                    <li class="list__list--item fragment">The Three Rules</li>
+                    <li class="list__list--item fragment">How can it Support us with our Problems?</li>
+                    <li class="list__list--item fragment">Real World Examples</li>
+                    <li class="list__list--item fragment">Awesome ChatGPT Prompts</li>
+                    <li class="list__list--item fragment">ChatGPT - Desktop Application</li>
+                    <li class="list__list--item fragment">ChatGPT-4</li>
+                    <li class="list__list--item fragment">Useful resources</li>
                 </ul>
             </section>
-            <section class="centered is--panorama" data-background-image="assets/backgrounds/valantic-bg.png">
-                <h1 class="centered__title">Hier ist eine Überschrift</h1>
-                <div class="centered__text--wrapper">
-                    <div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
-                    </div>
-                </div>
-                <div class="centered__image--wrapper">
-                    <img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-                </div>
+            <section class="list">
+                <h1 class="list__title">Intro & Honorable mentions</h1>
+                <ul class="list__list">
+                    <li class="list__list--item fragment">Links and Resources</li>
+                    <li class="list__list--item fragment">Thanks @ Team Academy for the Valantic Friday Session</li>
+                    <li class="list__list--item fragment">Thanks @ Max Mönch regarding valantic-revealjs</li>
+                    <li class="list__list--item fragment">Thanks @ René and our HR Team</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>After the talk you get a link to this presentation. It’s basically a website, which is public available, so you can look at it again and click on all these links </li>
+                        <li>It enables the discovery and technological progress for each employee and the company itself</li>
+                        <li>We worked in the last couple of weeks together to update the developer presentation framework to match the valantic corporate identity stylguide</li>
+                        <li>Its nice to see that a casual talk at the office can spark the fire for such useful productive applications. We will see it later within this presentation</li>
+                    </ul>
+                </aside>
             </section>
             <section class="centered">
-                <h1 class="centered__title">Hier ist eine Überschrift</h1>
-                <div class="centered__text--wrapper">
-                    <div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
-                    </div>
-                </div>
+                <h1 class="centered__title">What is ChatGPT?</h1>
                 <div class="centered__image--wrapper">
-                    <img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
+                    <img src="assets/img/grandma.jpg" alt="" class="centered__image fragment">
                 </div>
+                <aside class="notes">
+                    <ul>
+                        <li>What is this ChatGPT-3 thing everybody is talking about?</li>
+                        <li>if you have not stumbled across it before</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="list">
+                <h1 class="list__title">What is ChatGPT?</h1>
+                <ul class="list__list">
+                    <li class="list__list--item fragment">ChatGPT is a large language model created by OpenAI</li>
+                    <li class="list__list--item fragment">Based on the GPT-3 text prediction algorithm</li>
+                    <li class="list__list--item fragment">ChatGPT-3 was fed 45 TB of data</li>
+                    <li class="list__list--item fragment">Latest dataset is from 2021</li>
+                    <li class="list__list--item fragment">Machine learning is used to teach it</li>
+                    <li class="list__list--item fragment">You can ask it questions</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>ChatGPT-3 is basically a chat UI with build in filters (e.g bombs, politics and drugs), which gives the users easy access to commands (prompts)</li>
+                        <li>Under the hood it uses the GPT-3</li>
+                        <li>In short GPT-3 just predicts which word comes possibly next. You can compare it to your smartphone</li>
+                        <li>this data includes books, articles, websites and manually added information</li>
+                        <li>Its important to remember, that GPTs knowledge is only as good, as its data, the ML algorithm and the prompt</li>
+                        <li>Flat earth example, ML algorithm basically up- and downvotes provided answers to teach the model</li>
+                        <li>Can be slightly compared to teach a trick to a dog. Executed wanted command = treat</li>
+                        <li>Everything after 2021 is currently not fully known</li>
+                    </ul>
+                </aside>
             </section>
             <section class="centered">
-                <h1 class="centered__title">Bilder Stack</h1>
-                <div class="r-stack">
-                    <img class="fragment fade-out" data-fragment-index="0" src="https://placekitten.com/450/300" width="450" height="300">
-                    <img class="fragment current-visible" data-fragment-index="0" src="https://placekitten.com/300/450" width="300" height="450">
-                    <img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
+                <h1 class="centered__title">Great, another useless Chatbot?</h1>
+                <div class="centered__image--wrapper">
+                    <img src="assets/img/annoyed.gif" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Another chatbot hype like ~5 years ago?</li>
+                        <li>Before I can show you why it's much more than just a chatbot, we need to see why clear instructions are important</li>
+                        <li>I' show you short segments of a funny video, which illustrates this topic perfectly</li>
+                        <li>Full view link in hosted slides</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered" data-background-image="assets/backgrounds/valantic-bg.png">
+                <h1 class="centered__title">The importance of clear instructions</h1>
+                <iframe width="1020" height="500" src="https://www.youtube.com/embed/Ct-lOOUqmyY?controls=0&amp;start=5&autoplay=1&end=65" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </section>
+            <section class="centered" data-background-image="assets/backgrounds/valantic-bg.png">
+                <h1 class="centered__title">The importance of clear instructions</h1>
+                <iframe width="1020" height="500" src="https://www.youtube.com/embed/Ct-lOOUqmyY?controls=0&amp;start=76&autoplay=1&end=109" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </section>
+            <section class="centered" data-background-image="assets/backgrounds/valantic-bg.png">
+                <h1 class="centered__title">The importance of clear instructions</h1>
+                <iframe width="1020" height="500" src="https://www.youtube.com/embed/Ct-lOOUqmyY?controls=0&amp;start=216&autoplay=1&end=259" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <aside class="notes">
+                    <ul>
+                        <li>I think many of you already saw that this video has many connections to our work</li>
+                        <li>If a developer, designer or even a craftsman gets no clear instructions it can end in an unexpected outcome</li>
+                        <li>To increase the quality of ChatGPTs answers it's recommended to follow this simple three rules</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="list">
+                <h1 class="list__title">The Three Rules</h1>
+                <ul class="list__list">
+                    <li class="list__list--item fragment">Be as specific as possible</li>
+                    <li class="list__list--item fragment">Give it as much context information as possible</li>
+                    <li class="list__list--item fragment"><b>Don’t blindly trust ChatGPT answers - Verify it!</b></li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>Like seen in the video, clear instructions are very important</li>
+                        <li>You get more precise answers to your specific question with added context information</li>
+                        <li>My computer is overheating - how do I fix that? Add more information to it like My Desktop PC is overheating when im playing games</li>
+                        <li>Its very important to verify its output, because it can hallucinate</li>
+                        <li>a solution may sound plausible, but can still be wrong if someone if domain knowledge checks it</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="list">
+                <h1 class="list__title">How can it Support us with our Problems?</h1>
+                <ul class="list__list">
+                    <li class="list__list--item fragment">Creating Unit- or Integration tests for your code</li>
+                    <li class="list__list--item fragment">Optimizing the text of an article to have better SEO results</li>
+                    <li class="list__list--item fragment">Give you a guide to create a complex project specific excel formular</li>
+                    <li class="list__list--item fragment">Providing a list of pros & cons regarding a new technology</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>Just copy and paste your code into chatgpt and say it should write phpunit tests</li>
+                        <li>Give it instructions to include keywords to your target audience</li>
+                        <li>Can also help with a tutorial for any other application</li>
+                        <li>For example if you want to evaluate if the new technology would match your requirements</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Real World Examples - QA</h1>
+                <div class="centered__image--wrapper">
+                    <img src="assets/img/software-quality.png" alt="" class="centered__image ">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>This was the written prompt</li>
+                        <li>Keep the three rules in mind!</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Real World Examples - QA</h1>
+                <div class="centered__image--wrapper">
+                    <img src="assets/img/software-qualit-intro.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>First it generates a general description of the requirement</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Real World Examples - QA</h1>
+                <div class="centered__image--wrapper" style="height: 75%;">
+                    <img src="assets/img/software-quality-cases.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Boom - most of the relevant usecases are generated</li>
+                        <li>could be added to a ticket</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Real World Examples - QA</h1>
+                <div class="centered__image--wrapper">
+                    <img src="assets/img/software-quality-result.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>In the end it shows us a general explanation how we made sure that the feature is working correctly</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Real World Examples - HR</h1>
+                <div class="centered__image--wrapper" style="height: 75%;">
+                    <img src="assets/img/hr.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Our HR department can now create their own linked in search strings based on their requirements</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Real World Examples - Quiz</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/quiz1.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Here we see a typo in the requirements section, so GPT assumed it should write it in nodejs</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Real World Examples - Quiz</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/quiz2.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>nodejs code</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Real World Examples - Quiz</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/quiz3.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>code gets with correct prompt corrected to nuxt.js and added styling with tailwind.css</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Awesome ChatGPT Prompts</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/prompt-collection.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>You can find a open source curated list of already created prompts</li>
+                        <li>You can find more resources at the end slide as links</li>
+                        <li>you can even generate chatgpt prompt with a chatgpt prompt</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">ChatGPT - Desktop Application</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/gpt-desktop.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Is free, open source and for all OS</li>
+                        <li>Basically just a wrapper for the web version</li>
+                        <li>can sync awesome prompt lists</li>
+                        <li>possible to create own prompt and quickly access them with /</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">ChatGPT - Desktop Application</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/gpt-desktop-prompts.png" alt="" class="centered__image">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>You can manage your own prompts and adapt them to your needs</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">ChatGPT-4 - 8x more Context!</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/gpt4-context.png" alt="" class="centered__image fragment">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>It has many cool features, but i dont have time to show all of them to you</li>
+                        <li>it can handle 8x more context information</li>
+                        <li>you can paste a whole manual or documentation into it, even if the training data does not yet have it included</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">ChatGPT-4 - Media Support</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/mockup-instruction.png" alt="" class="centered__image fragment">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>It can interpret data from images, which is huge</li>
+                        <li>here the developers created a mockup on paper and gpt4 should create a website for it</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">ChatGPT-4 - Website Outcome</h1>
+                <div class="centered__image--wrapper" style="height: 75%">
+                    <img src="assets/img/created-website.png" alt="" class="centered__image fragment">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>It created the html and js for the whole website, based on the mockup</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="list">
+                <h1 class="list__title">Useful Resources</h1>
+                <div class="code__text">Clickable Links</div>
+                <ul class="list__list">
+                    <li class="list__list--item"><a href="https://val-chatgpt.surge.sh">Hosted Version: https://val-chatgpt.surge.sh</a></li>
+                    <li class="list__list--item"><a href="https://github.com/nexusunited/valantic-revealjs">https://github.com/nexusunited/valantic-revealjs</a></li>
+                    <li class="list__list--item"><a href="https://github.com/f/awesome-chatgpt-prompts">https://github.com/f/awesome-chatgpt-prompts</a></li>
+                    <li class="list__list--item"><a href="https://prompts.chat">https://prompts.chat</a></li>
+                    <li class="list__list--item"><a href="https://www.reddit.com/r/ChatGPT/">https://www.reddit.com/r/ChatGPT/</a></li>
+                    <li class="list__list--item"><a href="https://www.youtube.com/watch?app=desktop&v=2AdkSYWB6LY">Good Video about ChatGPT-4</a></li>
+                    <li class="list__list--item"><a href="https://youtu.be/Ct-lOOUqmyY">Kid Instruction Video</a></li>
+                </ul>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Thank you for participating!</h1>
+                <div class="centered__text--wrapper">
+                    <div class="centered__text">Any questions?</div>
+                </div>
+                <div class="centered__image--wrapper">
+                    <img src="assets/img/ask.gif" alt="" class="centered__image">
                 </div>
             </section>
         </div>
@@ -193,7 +376,7 @@ class SmokeTest extends HttpSmokeTestCase
         // - https://revealjs.com/config/
         Reveal.initialize({
             hash: true,
-
+            autoPlayMedia: true,
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
         });

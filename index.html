@@ -26,153 +26,99 @@
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
-            <section class="panorama" data-background="assets/backgrounds/valantic-bg.png">
-                <div>
-                    <div class="nxs__logo">
-                        <img src="assets/img/valantic-logo-white.png" alt="valantic logo" />
-                    </div>
-                    <div class="nxs__title-wrapper">
-                        <h1 class="nxs__title inverted">Lorem ipsum dolor</h1>
-                    </div>
-                </div>
+            <section class="centered is--panorama" data-background-image="assets/img/Hackathon-Halloween_1920x1080.jpg">
+                <aside class="notes">
+                    <ul>
+                        <li>Wie einige von euch beim Sommerfest schonn gesehen haben, geht es in die nächste Runde beim Valantic Hackathon</li>
+                        <li>Hackathon beginnt am Donnerstag, den 19.10 und endet am Freitag, dem 20.10</li>
+                        <li>Fans vom Regisseur Tim Burton wird bei diesjährigem Logo sicherlich etwas bekannt vorkommen</li>
+                        <li>Danke an Basti für das nice Logo</li>
+                    </ul>
+                </aside>
             </section>
-            <section class="agenda">
-                <h1 class="agenda__title">Agenda</h1>
-                <div class="agenda__image--wrapper">
-                    <img class="agenda__image" src="assets/backgrounds/mountains01.jpg" alt="Bergige Berg-Berge">
+            <section class="centered">
+                <h1 class="centered__title">Spring Edition '23</h1>
+                <div class="centered__image--wrapper" style="height: 500px">
+                    <img src="assets/img/spring-edition-people.jpg" alt="" class="centered__image ">
                 </div>
-                <div class="agenda__text--wrapper">
-                    <div class="agenda__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt
-                        werden.</div>
-                    <ol class="agenda__list">
-                        <li>Die erste Zeile</li>
-                        <li>Die zweite Zeile</li>
-                        <li>Noch eine Zeile</li>
-                        <li>Und das auch noch</li>
-                    </ol>
-                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Vorher möchte ich noch den Teilnehmern vom letzten Mal für diese coole Zeit und dem Feedback danken</li>
+                        <li>Da wir als Orga Team das bestmögliche Format passend zu unserer Unternehmenskultur bereitstellen wollen, ist das anonyme für uns sehr wichtig </li>
+                        <li>Aus diesem Grund ändert sich diesmal auch das Format bzw. der Ablauf des Hackathons</li>
+                        <li>Wie genau das aussieht, seht ihr gleich</li>
+                    </ul>
+                </aside>
             </section>
-            <section class="code">
-                <h1 class="code__title">Hier kommt die Überschrift hin</h1>
-                <div class="code__text--wrapper">
-                    <div class="code__text">Hier stehen die großartigen Dinge, die in dieser Schulung behandelt werden.
-                    </div>
+            <section class="centered">
+                <h1 class="centered__title">HR-GPT</h1>
+                <div class="centered__image--wrapper" style="height: 500px">
+                    <img src="assets/img/hr-gpt.png" alt="" class="centered__image ">
                 </div>
-                <div class="code__snippet--wrapper">
-                    <pre>
-                        <code class="hljs php" data-trim data-line-numbers>// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-    // some code
-}
-                        </code>
-                    </pre>
-                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Rene und Phillip haben sich ein Tool für die HR gewidmet, welche unserer HR die Suche nach neuen Mitarbeitern erleichtert mithilfe von ChatGPT</li>
+                    </ul>
+                </aside>
             </section>
-            <section data-auto-animate>
-                <h2 class="code__title" data-id="code-title">With Animations</h2>
-                <pre data-id="code-animation">
-                    <code class="hljs javascript" data-trim data-line-numbers="|4,8-11|17|22-24">
-                        <script type="text/template">
-import React, { useState } from 'react';
-
-function Example() {
-const [count, setCount] = useState(0);
-
-return (
-    <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-            Click me
-        </button>
-    </div>
-    );
-}
-
-function SecondExample() {
-const [count, setCount] = useState(0);
-
-return (
-    <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-            Click me
-        </button>
-    </div>
-    );
-}
-                        </script>
-                    </code>
-                </pre>
-            </section>
-            <section class="code full-width">
-                <h1 class="code__title">Full-Width</h1>
-                <div>
-                    <pre>
-                        <code class="hljs php">// tests/AppBundle/Smoke/SmokeTest.php
-class SmokeTest extends HttpSmokeTestCase
-{
-    protected function customizeRouteConfigs(RouteConfigCustomizer $routeConfigCustomizer)
-        {
-        $routeConfigCustomizer
-        ->customize(function (RouteConfig $config, RouteInfo $info) {
-            if ($info->getRouteName()[0] === '_') {
-                $config->skipRoute('Route name is prefixed with "_" meaning internal route.');
-            }
-        })
-        ->customizeByRouteName('acme_demo_secured_hello', function (RouteConfig $config, RouteInfo $info) {
-            $config->changeDefaultRequestDataSet('Log in as "user".')
-                    ->setAuth(new BasicHttpAuth('user', 'userpass'));
-        });
-    }
-}
-                        </code>
-                    </pre>
+            <section class="centered">
+                <h1 class="centered__title">Spryker + React Native</h1>
+                <div class="centered__image--wrapper" style="height: 500px">
+                    <img src="assets/img/react-native.png" alt="" class="centered__image ">
                 </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Max, Afshin und Michael haben sich einer React Native App gewidmet, welche an Spryker angebunden ist</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Valantic Spryker Plugin + GPT-3</h1>
+                <div class="centered__image--wrapper" style="height: 500px">
+                    <img src="assets/img/spryker-kit-gpt.png" alt="" class="centered__image ">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Hauke hat unserem inhouse entwickelten PHPStorm Spryker Plugin die Power von ChatGPT verpasst</li>
+                    </ul>
+                </aside>
+            </section>
+            <section class="centered">
+                <h1 class="centered__title">Devenv.sh</h1>
+                <div class="centered__image--wrapper" style="height: 500px">
+                    <img src="assets/img/devenv.png" alt="" class="centered__image ">
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>Ich habe mich dem new kid on the block im Bezug auf lokalen Entwicklungsumgebungen devenv.sh gewidmet</li>
+                        <li>Jetzt übrigens auch auf unserer neuen Github Valantic CEC Organisation</li>
+                    </ul>
+                </aside>
             </section>
             <section class="list">
-                <h1 class="list__title">Eine Listenseite</h1>
-                <div class="list__text--wrapper">
-                    <div class="list__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
-                    </div>
-                </div>
+                <h1 class="list__title">Ablauf</h1>
                 <ul class="list__list">
-                    <li class="list__list--item">Die erste Zeile</li>
-                    <li class="list__list--item">Die nächste Zeile</li>
-                    <li class="list__list--item">Noch eine Zeile</li>
-                    <li class="list__list--item">Und das auch noch</li>
+                    <li class="list__list--item fragment">Start: 19.10.23 - 13:00 Uhr</li>
+                    <li class="list__list--item fragment">Begrüßung, Team Einteilung, Ausgabe der Goodies und Lets Hack!</li>
+                    <li class="list__list--item fragment">Start: 20.10.23 - 09:00 Uhr</li>
+                    <li class="list__list--item fragment">17:30 - Vorstellung der Ergebnisse</li>
+                    <li class="list__list--item fragment">Ende: 18:00 Uhr</li>
+                    <li class="list__list--item fragment">(Optional) Open-End mit einem Getränk(en) seiner Wahl oder gemeinsam los ziehen</li>
                 </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>Hackathon beginnt am Donnerstag, den 19.10 und endet am Freitag, dem 20.10</li>
+                        <li>Essen werden wir diesmal Inhouse, um wie gewünscht mehr Zeit zum Coden zu haben</li>
+                        <li>Für ausreichend verpflegung über beide Tage hinweg ist ausreichend gesorgt</li>
+                        <li>Start mit Frühstück</li>
+                        <li>Essen - Inhouse</li>
+                        <li>Gemeinsame Vorstellung der Ergebnisse</li>
+                        <li>Open end vor Ort oder das wir ziehen gemeinsam los, um die Ergebnisse zu feiern</li>
+                        <li>Mehr Infos folgen zusammen mit der Anmeldung im Laufe der nächsten Woche</li>
+                    </ul>
+                </aside>
             </section>
-            <section class="centered is--panorama" data-background-image="assets/backgrounds/valantic-bg.png">
-                <h1 class="centered__title">Hier ist eine Überschrift</h1>
-                <div class="centered__text--wrapper">
-                    <div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
-                    </div>
-                </div>
-                <div class="centered__image--wrapper">
-                    <img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-                </div>
-            </section>
-            <section class="centered">
-                <h1 class="centered__title">Hier ist eine Überschrift</h1>
-                <div class="centered__text--wrapper">
-                    <div class="centered__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
-                    </div>
-                </div>
-                <div class="centered__image--wrapper">
-                    <img src="assets/backgrounds/mountains01.jpg" alt="" class="centered__image">
-                </div>
-            </section>
-            <section class="centered">
-                <h1 class="centered__title">Bilder Stack</h1>
-                <div class="r-stack">
-                    <img class="fragment fade-out" data-fragment-index="0" src="https://placekitten.com/450/300" width="450" height="300">
-                    <img class="fragment current-visible" data-fragment-index="0" src="https://placekitten.com/300/450" width="300" height="450">
-                    <img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
-                </div>
+            <section class="centered is--panorama" data-background-image="assets/img/Hackathon-Halloween_1920x1080.jpg">
             </section>
         </div>
         <div class="valantic-logo hide-in-darkmode">

@@ -51,19 +51,19 @@ $darkMode: false !default;
         }
 
         &.is--panorama {
-            color: $invertedTextColor;
+            color: $textColor;
 
 
             .centered__title {
-                color: $invertedTextColor;
+                color: $textColor;
 
                 &::after {
-                    background: $invertedTextColor;
+                    background: $textColor;
                 }
             }
 
             .centered__text {
-                color: $invertedTextColor;
+                color: $textColor;
 
                 &--wrapper {
                     z-index: 50;

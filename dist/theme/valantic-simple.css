@@ -5,7 +5,7 @@
  * Author: Max Mönch
  * Last Updated: 06.03.2023
  */
-/* 
+/*
 * allowed gradients
 * ---
 * Coral Red – Peach
@@ -95,16 +95,16 @@
   height: 300px;
 }
 .reveal .centered.is--panorama {
-  color: #ffffff;
+  color: #1A2025;
 }
 .reveal .centered.is--panorama .centered__title {
-  color: #ffffff;
+  color: #1A2025;
 }
 .reveal .centered.is--panorama .centered__title::after {
-  background: #ffffff;
+  background: #1A2025;
 }
 .reveal .centered.is--panorama .centered__text {
-  color: #ffffff;
+  color: #1A2025;
 }
 .reveal .centered.is--panorama .centered__text--wrapper {
   z-index: 50;
@@ -227,6 +227,12 @@
   text-align: left;
   position: absolute;
 }
+.reveal .panorama .nxs__title.light {
+  color: #1A2025;
+}
+.reveal .panorama .nxs__title.dark {
+  color: #ffffff;
+}
 
 .hide-in-darkmode {
   display: block;
@@ -248,6 +254,32 @@
   width: 100%;
 }
 
+.reveal .background-shape {
+  position: absolute;
+  top: -50%;
+  right: 0;
+  z-index: -1;
+}
+.reveal .background-shape.right {
+  right: -50%;
+}
+.reveal .background-shape.left {
+  left: 50%;
+  right: auto;
+}
+.reveal .background-shape::after {
+  content: " ";
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: linear-gradient(45deg, #FF4B4B 0%, #FFF685 100%);
+  border-radius: 53% 47% 66% 34%/46% 52% 48% 54%;
+}
+.reveal .background-shape.dark::after {
+  background-image: linear-gradient(45deg, #4B26B7 0%, #582cd4 100%);
+}
 .reveal .slides {
   color: #1A2025;
   padding-bottom: 40px;

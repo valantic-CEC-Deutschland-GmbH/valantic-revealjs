@@ -1,7 +1,7 @@
-# Valantic Hackathon - Halloween Edition'23 Announcement
+# valantic Hackathon - Halloween Edition'23 Recap
 
-Official Valantic Hackathon Halloween Edition'23 Announcement for our Internal Info-Meeting
+Recap of the valantic Hackathon - Halloween Edition'23.
 
-### URL: https://val-halloween-edition23.surge.sh
+### URL: https://val-halloween-edition23-stats.surge.sh
 
 > Navigate with the arrow keys through the slides.
